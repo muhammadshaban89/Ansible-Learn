@@ -1,9 +1,9 @@
 Overview:
 ---------
-**This document contains details about ansible architecture, ansible instalation , ansible inventories, ansible configuration file and management**
+**This document contains details about ansible architecture, ansible instalation , ansible inventories, ansible configuration file and its management, connection type and comments**
 
 Ansible Architecture:
-------------------------------------
+---------------------
 
 * There are two types of machines in ansible architecture:
 
