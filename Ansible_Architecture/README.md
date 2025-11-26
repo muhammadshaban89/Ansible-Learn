@@ -207,14 +207,13 @@ become_ask_pass = false
 ```
 Explaining all options:
 
-* inventory  => Specifies the path to the inventory file.
-* remote_user => The name of the user to log in as on the managed hosts. If not specified, the current user's name is used
-* ask_pass => Whether or not to prompt for an SSH password. Can be
-false if using SSH public key authentication.
-* become => Whether to automatically switch user on the managed host (typically to root) after connecting. This can also be specified by a play
-* become_method => How to switch user (typically sudo, which is the default, but su is an option).
-* become_user =>The user to switch to on the managed host (typically root, which is the default)
-* become_ask_pass =>Whether to prompt for a password for your become_method. Defaults to false.
+- **inventory:** 		Specifies the path to the inventory file.
+- **remote_user:** 		The name of the user to log in as on the managed hosts. If not specified, the current user's name is used
+- **ask_pass:** 		Whether or not to prompt for an SSH password. Can befalse if using SSH public key authentication.
+- **become:** 			Whether to automatically switch user on the managed host (typically to root) after connecting. This can also be specified by a play
+- **become_method:** 	How to switch user (typically sudo, which is the default, but su is an option).
+- **become_user:** 		The user to switch to on the managed host (typically root, which is the default)
+- **become_ask_pass:**	Whether to prompt for a password for your become_method. Defaults to false.
 
 
 -  By default, Ansible connects to managed hosts using the SSH protocol.
@@ -226,7 +225,7 @@ false if using SSH public key authentication.
 
 
 Non-SSH Connections:
---------------------------------------
+--------------------
 
 - The protocol used by Ansible to connect to managed hosts is set by default to "smart", which determines the most efficient way to use SSH. 
 
@@ -250,7 +249,7 @@ For example, there is one exception to the rule that SSH is used by default. If 
 
 
 CONFIGURATION FILE COMMENTS:
-------------------------------------------------------------
+----------------------------
 
 - There are two comment characters allowed by Ansible configuration files: the hash or number sign (#) and the semicolon (;).
 
