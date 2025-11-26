@@ -1,5 +1,5 @@
 # Ansible-Learn
-Ansible  Guide for bigners
+Ansible  Guide for biggners
 
 **1: Ansible Overview**
 
