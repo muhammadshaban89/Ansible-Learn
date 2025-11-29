@@ -73,7 +73,7 @@ documentation for the ping module:
 system is already in the correct state, they do nothing.
 
 
-Commond,shell,raw modules:
+Command,shell,raw modules:
 --------------------------
 - The `command` module allows administrators to run arbitrary commands on the command line of 
 managed hosts.
