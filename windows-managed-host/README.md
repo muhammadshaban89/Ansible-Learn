@@ -21,7 +21,16 @@ winrm quickconfig
 ```
 winrm set winrm/config/service/auth @{Basic="true"}
 winrm set winrm/config/service @{AllowUnencrypted="true"}
+
 ```
+**OR**
+
+```bash
+Set-Item -Path WSMan:\localhost\Service\Auth\Kerberos -Value $true
+Set-Item -Path WSMan:\localhost\Service\Auth\Negotiate -Value $true
+Set-Item -Path WSMan:\localhost\Service\AllowUnencrypted -Value $true
+```
+
 ⚠️ For production, it’s strongly recommended to use HTTPS with a certificate instead of unencrypted HTTP.
 
 
