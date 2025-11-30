@@ -26,8 +26,7 @@ winrm set winrm/config/service @{AllowUnencrypted="true"}
 **OR**
 
 ```bash
-Set-Item -Path WSMan:\localhost\Service\Auth\Kerberos -Value $true
-Set-Item -Path WSMan:\localhost\Service\Auth\Negotiate -Value $true
+Set-Item -Path WSMan:\localhost\Service\Auth\Basic -Value $true
 Set-Item -Path WSMan:\localhost\Service\AllowUnencrypted -Value $true
 ```
 
