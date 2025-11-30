@@ -118,5 +118,7 @@ ansible windows -m win_shell -a "ipconfig"
 Pro-Tips for Reliability:
 --------------------------
 • 	Use Ansible Vault to store passwords securely.
+
 • 	Automate WinRM setup with a PowerShell bootstrap script so every new Windows VM is ready for Ansible.
-• 	Prefer Windows-specific Ansible modules (, , ) over raw shell commands for idempotency.
+
+• 	Prefer Windows-specific Ansible modules (, `win_user`,`win_package` ) over raw shell commands for idempotency.
