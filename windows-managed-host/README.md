@@ -46,9 +46,9 @@ Port 5986 = HTTPS (needs certificate setup)
 
 4. Create a dedicated Ansible user
 
-Add a local/domain user (e.g., ansible)
+- Add a local/domain user (e.g., ansible)
 
-Give it Administrator rights (or least privileges required).
+- Give it Administrator rights (or least privileges required).
 
 ```
 New-LocalUser -Name "ansibleu" -Password (Read-Host -AsSecureString "Enter Password") -FullName "Ansible Automation User" -Description "User for Ansible automation"
