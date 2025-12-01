@@ -48,10 +48,10 @@ sudo usermod -aG sudo ansible    # Ubuntu
 - Configure **SSH key-based login**:
   ```bash
   sudo mkdir /home/ansibleu/.ssh
-  sudo cp ~/.ssh/authorized_keys /home/ansibleu/.ssh/
-  sudo chown -R ansibleu:ansibleu /home/ansibleu/.ssh
-  sudo chmod 700 /home/ansibleu/.ssh
-  sudo chmod 600 /home/ansibleu/.ssh/authorized_keys
+  sudo cp ~/.ssh/authorized_keys /home/ansible/.ssh/
+  sudo chown -R ansible:ansible /home/ansibleu/.ssh
+  sudo chmod 700 /home/ansible/.ssh
+  sudo chmod 600 /home/ansible/.ssh/authorized_keys
   ```
 
 ---
