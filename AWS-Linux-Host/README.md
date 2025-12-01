@@ -92,7 +92,7 @@ aws1 | SUCCESS => {
 
 - Create a file in current directory at yoour control node and run:
   ```bash
-  ansible aws_hosts -m copy -a "src=test.txt dest=/home/ansibleu/"
+  ansible aws_hosts -m copy -a "src=test.txt dest=/home/ansible/"
 ```
 
 ---
