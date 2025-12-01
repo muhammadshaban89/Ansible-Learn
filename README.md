@@ -13,3 +13,5 @@ Ansible  Guide for biggners
 
 **6:  AWS-Linux-Hosts**
 
+***7: AWS-Winodws-Managed-Hosts**
+
