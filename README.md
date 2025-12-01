@@ -7,4 +7,9 @@ Ansible  Guide for biggners
 
 **3: Ansible_Modules**
 
-**3: Ansible_Adhoc_Commonds**
+**4: Ansible_Adhoc_Commonds**
+
+**5: windows-managed-host**
+
+**6:  AWS-Mnaged-Hosts**
+
