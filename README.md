@@ -11,5 +11,5 @@ Ansible  Guide for biggners
 
 **5: windows-managed-host**
 
-**6:  AWS-Mnaged-Hosts**
+**6:  AWS-Linux-Hosts**
 
