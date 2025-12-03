@@ -91,13 +91,14 @@ aws1 | SUCCESS => {
 **TEST**
 
 - Create a file in current directory at yoour control node and run:
-  ```bash
+```bash
   ansible aws_hosts -m copy -a "src=test.txt dest=/home/ansible/"
 ```
-
----
-
-##  Key Notes for Reliability
+## Key Notes for Reliability:
 - Always ensure **Security Group** allows SSH from your control node.
 - Use **IAM roles** if you plan to integrate AWS modules (e.g., provisioning via Ansible).
 - For reproducibility, script the setup with **cloud-init** or **Ansible playbooks** so every new EC2 host is ready automatically.
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
