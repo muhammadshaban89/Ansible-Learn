@@ -182,8 +182,7 @@ ansible all -m package -a "name=curl state=present"
 
 ---
 
-**Thanks :**
+**Thanks:**
 
-**- Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a*
+**👉-Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a*
 
-👉 Do you want me to bundle these into a **ready-to-run playbook** that covers all modules in one YAML file for lab validation?
