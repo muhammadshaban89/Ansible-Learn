@@ -98,6 +98,8 @@ ansible awswindows -m win_ping --ask-vault-pass
 ansible-playbook aws.yml --ask-vault-pass
 ```
 
+Thanks:
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
 
 
 
