@@ -30,3 +30,8 @@ ansible all -m ping
 - Use playbooks for repeatable, complex tasks.
 - Keep ad hoc commands for short, urgent, or exploratory actions.
 - Always specify inventory groups to avoid accidental changes across all hosts.
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
+
