@@ -184,5 +184,5 @@ ansible all -m package -a "name=curl state=present"
 
 **Thanks:**
 
-**👉-Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a*
+*👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a*
 
