@@ -122,3 +122,7 @@ Pro-Tips for Reliability:
 • 	Automate WinRM setup with a PowerShell bootstrap script so every new Windows VM is ready for Ansible.
 
 • 	Prefer Windows-specific Ansible modules (, `win_user`,`win_package` ) over raw shell commands for idempotency.
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
