@@ -64,7 +64,19 @@ Ansible_Play_Books:
 
 **In short:** Playbooks are the **heart of Ansible automation**, turning manual steps into reproducible, scalable workflows. They let you manage everything from a single server to thousands of nodes with clarity and control.  
 
-**Thanks:*
+**IMPORTANT:**
+
+- Only the space character can be used for indentation; tab characters are not 
+allowed. 
+- If you use the vi text editor, you can apply some settings which might make it 
+easier to edit your playbooks. For example, you can add the following line to your 
+$HOME/.vimrc file, and when vi detects that you are editing a YAML file, it 
+performs a 2-space indentation when you press the Tab key and autoindents 
+subsequent lines. 
+```bash
+autocmd FileType yaml setlocal ai ts=2 sw=2 et 
+```
+*Thanks:*
 
 👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
 
