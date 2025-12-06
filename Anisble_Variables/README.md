@@ -18,7 +18,7 @@ files in an Ansible project.
 - **Purpose:** Avoid hardcoding, enable customization, and make automation reusable.  
 - **Syntax:** Defined as YAML key–value pairs, referenced with `{{ var_name }}`.
 
-**NAMING VARIABLES: **
+**NAMING VARIABLES:**
 
 - Variable names must start with a letter, and they can only contain letters, numbers, and 
 underscores. 
