@@ -27,7 +27,7 @@ underscores.
 |-----------------------|----------------------|
 |web server             |   web_server |
 |remote.file             |remote_file |
-|-----------------------|---------------|
+|1st file |file_1 file1 |
 ---
 
 ### 2. Variable Scopes
