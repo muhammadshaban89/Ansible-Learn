@@ -134,9 +134,10 @@ servers2
 [servers:vars] 
 user=joe
 ```
-Some disadvantages of this approach are that it makes the inventory file more difficult to work 
-with, it mixes information about hosts and variables in the same file, and uses an obsolete syntax
----
+
+*Some disadvantages of this approach are that it makes the inventory file more difficult to work 
+with, it mixes information about hosts and variables in the same file, and uses an obsolete syntax*
+
 
 **Using Directories to Populate Host and Group Variables :**
 
