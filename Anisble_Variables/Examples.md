@@ -96,42 +96,43 @@ Example-2:
 - name: Setup Apache webserver with firewall rule
   hosts: webservers
   become: yes
+  vars:
+    web_service: httpd
+    firewall_service: firewalld
+    firewall_rules:
+      - http
+      - https
+
   tasks:
-    - name: Install httpd
+    - name: Install web service
       yum:
-        name: httpd
+        name: "{{ web_service }}"
         state: present
 
-    - name: Install firewalld
+    - name: Install firewall service
       yum:
-        name: firewalld
+        name: "{{ firewall_service }}"
         state: present
 
-    - name: Ensure httpd service is enabled and started
+    - name: Ensure web service is enabled and started
       service:
-        name: httpd
+        name: "{{ web_service }}"
         state: started
         enabled: yes
 
-    - name: Ensure firewalld service is enabled and started
+    - name: Ensure firewall service is enabled and started
       service:
-        name: firewalld
+        name: "{{ firewall_service }}"
         state: started
         enabled: yes
 
-    - name: Allow HTTP service in firewall
+    - name: Allow firewall rules
       firewalld:
-        service: http
+        service: "{{ item }}"
         permanent: yes
         state: enabled
         immediate: yes
-
-    - name: Allow HTTPS service in firewall
-      firewalld:
-        service: https
-        permanent: yes
-        state: enabled
-        immediate: yes
+      loop: "{{ firewall_rules }}"
 ```
 
 ---
