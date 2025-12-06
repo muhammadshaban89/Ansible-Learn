@@ -1,13 +1,33 @@
 Ansible Variables:
 ------------------
+- Ansible supports variables that can be used to store values that can then be reused throughout 
+files in an Ansible project.
+- This can simplify the creation and maintenance of a project and reduce the number of errors. 
+- Variables provide a convenient way to manage dynamic values for a given environment in your Ansible project.
+- Examples of values that variables might contain include: 
+• Users to create 
+• Packages to install 
+• Services to restart 
+• Files to remove 
+• Archives to retrieve from the internet
 
-## Understanding Ansible Variables
+## Understanding Ansible :
 
 ### 1. What Are Variables?
 - **Definition:** Variables store values (strings, numbers, lists, dicts) for reuse in playbooks.  
 - **Purpose:** Avoid hardcoding, enable customization, and make automation reusable.  
 - **Syntax:** Defined as YAML key–value pairs, referenced with `{{ var_name }}`.
 
+**NAMING VARIABLES: **
+
+- Variable names must start with a letter, and they can only contain letters, numbers, and 
+underscores. 
+
+|INVALID VARIABLE NAMES |  VALID VARIABLE NAMES |
+|-----------------------|----------------------|
+|web server             |   web_server |
+|remote.file             |remote_file |
+|-----------------------|---------------|
 ---
 
 ### 2. Variable Scopes
