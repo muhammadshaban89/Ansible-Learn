@@ -5,11 +5,11 @@ files in an Ansible project.
 - This can simplify the creation and maintenance of a project and reduce the number of errors. 
 - Variables provide a convenient way to manage dynamic values for a given environment in your Ansible project.
 - Examples of values that variables might contain include: 
-• Users to create 
-• Packages to install 
-• Services to restart 
-• Files to remove 
-• Archives to retrieve from the internet
+  • Users to create 
+  • Packages to install 
+  • Services to restart 
+  • Files to remove 
+  • Archives to retrieve from the internet
 
 ## Understanding Ansible :
 
