@@ -69,7 +69,8 @@ block in the playbook, the `vars_files` directive may be used, followed by a lis
 external variable files relative to the location of the playbook: -
 ```yaml
 hosts: all 
-vars_files: - vars/users.yml
+vars_files:
+  - vars/users.yml
 ```
 The playbook variables are then defined in that file or those files in YAML format: 
 ```yaml
