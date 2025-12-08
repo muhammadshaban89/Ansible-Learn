@@ -18,3 +18,7 @@ Ansible  Guide for biggners
 **8: Command, shell, raw, files modules, software package modules**
 
 **9: Ansible-PlayBooks**
+
+**10: Ansible_Variables**
+
+**11: Ansible Secrets**
