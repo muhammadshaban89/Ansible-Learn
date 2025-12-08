@@ -103,11 +103,12 @@ Vault password: redhat
   ```
  - Playbook variables (as opposed to inventory variables) can also be protected with Ansible Vault.
  - Sensitive playbook variables can be placed in a separate file which is encrypted with  `Ansible Vault` and which is included in the playbook through a `vars_files directive.`
- -  This can be useful, because playbook variables take precedence over inventory variables.
- -  If you are using multiple vault passwords with your playbook, make sure that each encrypted file is assigned a vault ID, and that you enter the matching password with that vault ID when running 
+ - This can be useful, because playbook variables take precedence over inventory variables.
+ - If you are using multiple vault passwords with your playbook, make sure that each encrypted file is assigned a vault ID, and that you enter the matching password with that vault ID when running 
 the playbook.
-- - This ensures that the correct password is selected first when decrypting the `vault-encrypted` file, which is faster than forcing Ansible to try all the vault passwords you provided until it finds the right one.
-- 
+- This ensures that the correct password is selected first when decrypting the `vault-encrypted` file, which is faster than forcing Ansible to try all the vault passwords you provided until it finds the right one.
+
+  
 Recommended Practices for Variable File Management:
 ---------------------------------------------------
 - To simplify management, it makes sense to set up your Ansible project so that sensitive variables and all other variables are kept in separate files.
