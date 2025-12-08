@@ -50,7 +50,7 @@ control. You should always use the view subcommand to view the file's contents w
 ```
 - Use the `--output=OUTPUT_FILE` option to save the encrypted file with a new name. You can only use one input file with the `--output` option
 
-**5:Decrypting an Existing File:
+**5:Decrypting an Existing File:**
 
 - An existing encrypted file can be permanently decrypted by using the `ansible-vault decrypt filename` command.
 - When decrypting a single file, you can use the `--output` option to save the decrypted file under a different name.
