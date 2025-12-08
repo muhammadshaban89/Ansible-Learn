@@ -1,4 +1,4 @@
-Ansible_Secerets:
+Ansible_Secrets:
 ---------------------
 
 - Ansible may need access to sensitive data such as passwords or API keys in order to configure managed hosts.
