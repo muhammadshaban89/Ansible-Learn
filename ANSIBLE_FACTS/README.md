@@ -23,7 +23,8 @@ ANSIBLE FACTS:
 
 ```bash
 - name: Fact dump 
-  hosts: all tasks:
+  hosts: all
+  tasks:
     - name: Print all facts 
       debug:
         var: ansible_facts
