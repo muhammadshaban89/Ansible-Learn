@@ -121,3 +121,8 @@ Recommended Practices for Variable File Management:
 ---------------------------------------------------
 - To simplify management, it makes sense to set up your Ansible project so that sensitive variables and all other variables are kept in separate files.
 - The files containing sensitive variables can then be protected with the `ansible-vault` command.
+
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
