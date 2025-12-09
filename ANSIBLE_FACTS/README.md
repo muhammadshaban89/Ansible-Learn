@@ -12,10 +12,13 @@ ANSIBLE FACTS:
 • The number of CPUs
 • The available or free memory
 • The available disk space
-- Facts are a convenient way to retrieve the state of a managed host and to determine what action to take based on that state. For example:
-• A server can be restarted by a conditional task which is run based on a fact containing the managed host's current kernel version.
-• The MySQL configuration file can be customized depending on the available memory reported by a fact.
-• The IPv4 address used in a configuration file can be set based on the value of a fact.
+- Facts are a convenient way to retrieve the state of a managed host and to determine what action to take based on that state.
+- **For example:**
+  • A server can be restarted by a conditional task which is run based on a fact containing the managed host's current kernel version.
+  
+  • The MySQL configuration file can be customized depending on the available memory reported by a fact.
+  
+  • The IPv4 address used in a configuration file can be set based on the value of a fact.
 
 - Normally, every play runs the `setup` module automatically before the first task in order to gather facts. This is reported as the Gathering Facts task in Ansible.
 -  By default, you do not need to have a task to run `setup` in your play. It is normally run automatically for you.
