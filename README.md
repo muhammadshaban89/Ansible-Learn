@@ -22,3 +22,5 @@ Ansible  Guide for biggners
 **10: Ansible_Variables**
 
 **11: Ansible Secrets**
+
+**12: Ansible Facts**
