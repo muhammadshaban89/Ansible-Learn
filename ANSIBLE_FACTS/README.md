@@ -171,15 +171,15 @@ PlayBook_Example:
 ```yaml
 ---
 - name: Install Apache and starts the service 
-hosts: webserver
-tasks:
-  - name: Install the required package 
-    yum:
-      name: "{{ ansible_facts['ansible_local']['custom']['general'] ['package'] }}"
-      state: latest
-  - name: Start the service 
-    service:
-      name: "{{ ansible_facts['ansible_local']['custom']['general'] ['service'] }}"
-      state: "{{ ansible_facts['ansible_local']['custom']['general'] ['state'] }}"
-      enabled: "{{ ansible_facts['ansible_local']['custom']['general'] ['enabled'] }}"
+  hosts: webserver
+  tasks:
+    - name: Install the required package 
+      yum:
+        name: "{{ ansible_facts['ansible_local']['custom']['general'] ['package'] }}"
+        state: latest
+    - name: Start the service 
+      service:
+        name: "{{ ansible_facts['ansible_local']['custom']['general'] ['service'] }}"
+        state: "{{ ansible_facts['ansible_local']['custom']['general'] ['state'] }}"
+        enabled: "{{ ansible_facts['ansible_local']['custom']['general'] ['enabled'] }}"
 ```
