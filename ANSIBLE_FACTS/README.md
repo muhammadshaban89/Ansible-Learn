@@ -110,8 +110,8 @@ ansible_facts.dns.nameservers
 web_package = httpd
 db_package = mariadb-server
 [users]
-user1 = joe 
-user2 = jane
+user1 = joel
+user2 = peter
 ```
 - Custom facts are stored by the `setup` module in the `ansible_facts.ansible_local` variable. 
 - Facts are organized based on the name of the file that defined them. 
