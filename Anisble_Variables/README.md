@@ -186,3 +186,7 @@ off run of a playbook. For example:
 - **Scopes** → global, play, host, group, role, facts.  
 - **Usage** → reference with `{{ var_name }}` in tasks, templates, or handlers.  
 
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
