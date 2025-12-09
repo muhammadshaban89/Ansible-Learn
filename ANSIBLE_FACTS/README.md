@@ -3,15 +3,16 @@ ANSIBLE FACTS:
 - `Ansible facts` are variables that are automatically discovered by Ansible on a managed host. 
 - Facts contain host-specific information that can be used just like regular variables in plays, conditionals, loops, or any other statement that depends on a value collected from a managed host.
 - Some of the facts gathered for a managed host might include:
-• The host name
-• The kernel version
-• The network interfaces
-• The IP addresses
-• The version of the operating system
-• Various environment variables
-• The number of CPUs
-• The available or free memory
-• The available disk space
+  
+  • The host name
+  • The kernel version
+  • The network interfaces
+  • The IP addresses
+  • The version of the operating system
+  • Various environment variables
+  • The number of CPUs
+  • The available or free memory
+  • The available disk space
 - Facts are a convenient way to retrieve the state of a managed host and to determine what action to take based on that state.
 - **For example:**
   • A server can be restarted by a conditional task which is run based on a fact containing the managed host's current kernel version.
