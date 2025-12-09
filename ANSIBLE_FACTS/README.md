@@ -44,7 +44,7 @@ ANSIBLE FACTS:
 * List of DNS servers ansible_facts['dns']['nameservers']
 * Version of the currently running kernel -->ansible_facts['kernel']
 
-*Remember that when a variable's value is a hash/dictionary, there are two syntaxes that can be used to retrieve the value. To take two examples from the preceding table:
+*Remember that when a variable's value is a hash/dictionary, there are two syntaxes that can be used to retrieve the value.*
 ```bash
 ansible_facts['default_ipv4']['address']
 ```
@@ -75,7 +75,9 @@ ansible_facts.dns.nameservers
 
 **TURNING OFF FACT GATHERING:**
 
-* Sometimes, you do not want to gather facts for your play. There are a couple of reasons why this might be the case. It might be that you are not using any facts and want to speed up the play or reduce load caused by the play on the managed hosts. It might be that the managed hosts cannot run the setup module for some reason, or need to install some prerequisite software before gathering facts.
+* Sometimes, you do not want to gather facts for your play. There are a couple of reasons why this might be the case.
+*  It might be that you are not using any facts and want to speed up the play or reduce load caused by the play on the managed hosts.
+*   It might be that the managed hosts cannot run the setup module for some reason, or need to install some prerequisite software before gathering facts.
 
 * To disable fact gathering for a play, set the `gather_facts` keyword to `no`
 
