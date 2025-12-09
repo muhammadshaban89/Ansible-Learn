@@ -198,3 +198,6 @@ PlayBook_Example:
         state: "{{ ansible_facts['ansible_local']['custom']['general'] ['state'] }}"
         enabled: "{{ ansible_facts['ansible_local']['custom']['general'] ['enabled'] }}"
 ```
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
