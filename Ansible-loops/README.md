@@ -31,7 +31,7 @@ Ansible Loops:
     - name: Checking status
       service:
         name: "{{ item }}"
-        state: present
+        state: started
       loop:
         - httpd
         - firewalld
