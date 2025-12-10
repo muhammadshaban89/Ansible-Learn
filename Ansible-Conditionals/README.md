@@ -91,10 +91,12 @@ RUNNING TASKS CONDITIONALLY:
 |First variable's value is present as a value in second variable's list | ansible_distribution in supported_distros|
 |                                 |                                     |
 
+**Mutilple Conditions**
+
 ```bash
 when: ansible_distribution == "RedHat" or ansible_distribution == "Fedora"
 ```
-==========
+
 ```bash
 when: ansible_distribution_version == "7.5" and ansible_kernel == "3.10.0-327.el7.x86_64"
 ```
