@@ -24,3 +24,7 @@ Ansible  Guide for biggners
 **11: Ansible Secrets**
 
 **12: Ansible Facts**
+
+**13: Ansible-Loops**
+
+**14: Ansible_Conditionals**
