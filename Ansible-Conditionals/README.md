@@ -122,11 +122,14 @@ or
 - You can combine loops and conditionals.
 
 ```bash
-- name: install mariadb-server if enough space on root
-  yum:
-    name: mariadb-server 
-    state: latest
-  loop: "{{ ansible_mounts }}"
-  when: item.mount == "/" and item.size_available > 300000000
+- name: Install DB Server
+  hosts: rhelnode
+  tasks:
+    - name: install mariadb-server if enough space on root
+      yum:
+        name: mariadb-server 
+        state: latest
+      loop: "{{ ansible_mounts }}"
+      when: item.mount == "/" and item.size_available > 300000000
 
 ```
