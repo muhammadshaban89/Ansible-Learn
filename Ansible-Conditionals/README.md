@@ -133,3 +133,6 @@ or
       when: item.mount == "/" and item.size_available > 300000000
 
 ```
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
