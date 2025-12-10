@@ -11,7 +11,7 @@ Ansible Loops:
  **EXAMPLES** 
  - This is a simple playbooks that is used to check status of services on managed hosts.
  ```bash
-- name: Check Services status
+- name: start Services
   hosts: rhelnode
   tasks:
     - name: httpd is running
@@ -25,10 +25,10 @@ Ansible Loops:
 ```
 - With `loop` playBook can be written as:
 ```bash
-- name: Check services status 
+- name: Start Services
   hosts: rhelnode
   tasks:
-    - name: Checking status
+    - name: Checking Services
       service:
         name: "{{ item }}"
         state: started
@@ -40,14 +40,14 @@ Ansible Loops:
 - The list used by loop can be provided by a variable. In the following example, the variable `myservices` contains the list of services that need to be running.
 
 ```bash
-- name: Check services status 
+- name: Start Services
   hosts: rhelnode
   vars:
     myservices:
       - httpd
       - firewalld  
   tasks:
-    - name: Checking status
+    - name: Checking status and starting
       service:
         name: "{{ item }}"
         state: started
