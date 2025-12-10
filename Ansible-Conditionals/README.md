@@ -64,6 +64,7 @@ RUNNING TASKS CONDITIONALLY:
 
 
 |      OPERATION                      |  Example			|
+--------------------------------------------------------
 |Equal (value is a string)        |	   ansible_machine == "x86_64" |
 |Equal (value is numeric)       |	   max_memory == 512                |
 |Less than                                |	   min_memory < 128                  |
