@@ -69,27 +69,27 @@ RUNNING TASKS CONDITIONALLY:
 |Equal (value is a string)        |	   ansible_machine == "x86_64"      |
 
 |Equal (value is numeric)         |	   max_memory == 512                |
-|------------------------------------------------|---------------------------------------------------------|
-|Less than                                |	   min_memory < 128                  |
-|------------------------------------------------|---------------------------------------------------------|
-|Greater than                           |	   min_memory > 256                  |
-|------------------------------------------------|---------------------------------------------------------|
+
+|Less than                         |	   min_memory < 128                |
+
+|Greater than                      |	   min_memory > 256                 |
+
 |Less than or equal to             |	   min_memory <= 256                |
-|------------------------------------------------|---------------------------------------------------------|
-|Greater than or equal to       | 	   min_memory >= 512                |
-|------------------------------------------------|---------------------------------------------------------|
-|Not equal to                           |           min_memory != 512            |
-|------------------------------------------------|---------------------------------------------------------|
-|Variable exists                       |    min_memory is defined             |
-|------------------------------------------------|---------------------------------------------------------|
+
+|Greater than or equal to          | 	   min_memory >= 512                |
+
+|Not equal to                       |     min_memory != 512               |
+
+|Variable exists                     |    min_memory is defined             |
+
 |Variable does not exist         |     min_memory is not defined     |
-|------------------------------------------------|---------------------------------------------------------|
+
 |Boolean variable is true. The values of `1`, True, or `yes` evaluate to `true`. | memory_available|
-|------------------------------------------------|---------------------------------------------------------|
+
 |Boolean variable is false. The values of `0`, `False`, or `no` evaluate to `false`.|not memory_available|
-|------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+
 |First variable's value is present as a value in second variable's list | ansible_distribution in supported_distros|
-|------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+
 
 ```bash
 when: ansible_distribution == "RedHat" or ansible_distribution == "Fedora"
