@@ -115,3 +115,7 @@ Ansible Loops:
          state: present
        with_items: "{{ users_list }}" 
 ```
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
