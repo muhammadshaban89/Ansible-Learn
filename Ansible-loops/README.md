@@ -96,21 +96,22 @@ Ansible Loops:
 - Instead of requiring a list, this keyword requires parameters to generate a list of values based on a numeric sequence.
 - The loop variable item holds the value of one of the generated items in the generated sequence during each iteration.
 
+*EXAMPLE:*
 ```bash
  - name: Create Users Using Earlier-Style Ansible Loops
  - hosts: all
-  become: yes
-  vars:
-    users_list:
-      - alice
-      - bob
-      - charlie
-      - dave
-      - eve
-  tasks:
-    - name: Ensure users exist
-      user:
-        name: "{{ item }}"
-        state: present
-      with_items: "{{ users_list }}" 
+   become: yes
+   vars:
+     users_list:
+       - alice
+       - bob
+       - charlie
+       - dave
+       - eve
+   tasks:
+     - name: Ensure users exist
+       user:
+         name: "{{ item }}"
+         state: present
+       with_items: "{{ users_list }}" 
 ```
