@@ -8,15 +8,15 @@ RUNNING TASKS CONDITIONALLY:
 
 - The following scenarios illustrate the use of conditionals in Ansible:
 
-• A hard limit can be defined in a variable (for example, min_memory) and compared against the available memory on a managed host.
+  • A hard limit can be defined in a variable (for example, min_memory) and compared against the available memory on a managed host.
 
-• The output of a command can be captured and evaluated by Ansible to determine whether or not a task completed before taking further action. For example, if a program fails, then a batch is skipped.
+  • The output of a command can be captured and evaluated by Ansible to determine whether or not a task completed before taking further action. For example, if a program fails, then a batch is skipped.
 
-• Use Ansible facts to determine the managed host network configuration and decide which template file to send (for example, network bonding or trunking).
+  • Use Ansible facts to determine the managed host network configuration and decide which template file to send (for example, network bonding or trunking).
 
-• The number of CPUs can be evaluated to determine how to properly tune a web server.
+  • The number of CPUs can be evaluated to determine how to properly tune a web server.
 
-• Compare a registered variable with a predefined variable to determine if a service changed. For example, test the MD5 checksum of a service configuration file to see if the service is changed.
+  • Compare a registered variable with a predefined variable to determine if a service changed. For example, test the MD5 checksum of a service configuration file to see if the service is changed.
 
 **Conditional Task Syntax:**
 
@@ -62,33 +62,20 @@ RUNNING TASKS CONDITIONALLY:
 ````
  **Example of Conditionals:**
 
-|------------------------------------------------|--------------------------------------------------------|
+
 |      OPERATION                      |  Example			|
-|------------------------------------------------|--------------------------------------------------------|
 |Equal (value is a string)        |	   ansible_machine == "x86_64" |
-|------------------------------------------------|---------------------------------------------------------|
 |Equal (value is numeric)       |	   max_memory == 512                |
-|------------------------------------------------|---------------------------------------------------------|
 |Less than                                |	   min_memory < 128                  |
-|------------------------------------------------|---------------------------------------------------------|
 |Greater than                           |	   min_memory > 256                  |
-|------------------------------------------------|---------------------------------------------------------|
 |Less than or equal to             |	   min_memory <= 256                |
-|------------------------------------------------|---------------------------------------------------------|
 |Greater than or equal to       | 	   min_memory >= 512                |
-|------------------------------------------------|---------------------------------------------------------|
 |Not equal to                           |           min_memory != 512            |
-|------------------------------------------------|---------------------------------------------------------|
 |Variable exists                       |    min_memory is defined             |
-|------------------------------------------------|---------------------------------------------------------|
 |Variable does not exist         |     min_memory is not defined     |
-|------------------------------------------------|---------------------------------------------------------|
 |Boolean variable is true. The values of `1`, True, or `yes` evaluate to `true`. | memory_available|
-|------------------------------------------------|---------------------------------------------------------|
 |Boolean variable is false. The values of `0`, `False`, or `no` evaluate to `false`.|not memory_available|
-|------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
 |First variable's value is present as a value in second variable's list | ansible_distribution in supported_distros|
-|------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 
 - One when statement can be used to evaluate multiple conditionals. To do so, conditionals can be combined with either the `and` or `or` keywords, and grouped with parentheses.
 
