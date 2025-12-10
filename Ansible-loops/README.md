@@ -14,13 +14,13 @@ Ansible Loops:
 - name: Check Services status
   hosts: rhelnode
   tasks:
-    - name: httpd is running 
-      service: 
+    - name: httpd is running
+      service:
         name: httpd
         state: started
-    - name: firewalld is running 
-      service: 
-        name: firewalld 
+    - name: firewalld is running
+      service:
+        name: firewalld
         state: started
 ```
 - With `loop` playBook can be written as:
