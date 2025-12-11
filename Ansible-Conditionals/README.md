@@ -123,6 +123,26 @@ when:
 - ansible_kernel == "3.10.0-327.el7.x86_64"
 
 ```
+**EXAMPLE:**
+```yaml
+- hosts: all
+  become: yes
+  vars:
+    min_memory: 512   # minimum memory required in MB
+
+  tasks:
+    - name: Gather memory facts
+      setup:
+        filter: ansible_memory_mb
+
+    - name: Install curl if min_memory is defined and sufficient
+      apt:
+        name: curl
+        state: present
+      when:
+        - min_memory is defined
+        - ansible_memory_mb.real.free >= min_memory
+```
 - more  complex conditions:
 
 ```bash
