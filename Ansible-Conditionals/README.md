@@ -147,6 +147,12 @@ or
       when: item.mount == "/" and item.size_available > 300000000
 
 ```
+*In the above example, the `mariadb-server` package is installed by the yum module if there is 
+a file system mounted on `/` with more than `300 MB` free. The `ansible_mounts` fact is a list of 
+dictionaries, each one representing facts about one mounted file system. The loop iterates over 
+each dictionary in the list, and the conditional statement is not met unless a dictionary is found 
+representing a mounted file system where both conditions are true.*
+
 Thanks:
 
 👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
