@@ -60,8 +60,17 @@ RUNNING TASKS CONDITIONALLY IN ANSIBLE:
        when: ansible_distribution in supported_distros
 
 ````
- **Example of Conditionals:**
+**Common Distros:**
+|  | ansible_distribution | ansible_os_family | 
+|  | Ubuntu | Debian | 
+|  | RedHat | RedHat | 
+|  | CentOS | RedHat | 
+|  | Fedora | RedHat | 
+|  | Kali | Debian | 
 
+
+
+ **Example of Conditionals:**
 
 
 |      OPERATION                      |  Example			|
