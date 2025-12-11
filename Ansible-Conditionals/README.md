@@ -26,7 +26,7 @@ RUNNING TASKS CONDITIONALLY IN ANSIBLE:
 **EXAMPLES:**
 
 1:_________________________________________________________________
-```bash
+```yaml
 
 ---
 - name: Install packages Based on conditionals
@@ -42,7 +42,7 @@ RUNNING TASKS CONDITIONALLY IN ANSIBLE:
 
 2:___________________________________________________________________
 
-```bash
+```yaml
 
 ---
 - name: Demonstrate the "in" keyword 
@@ -155,7 +155,7 @@ or
 ```
 - You can combine loops and conditionals.
 
-```bash
+```yaml
 - name: Install DB Server
   hosts: rhelnode
   tasks:
