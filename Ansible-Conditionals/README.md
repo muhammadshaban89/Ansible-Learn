@@ -29,7 +29,7 @@ RUNNING TASKS CONDITIONALLY IN ANSIBLE:
 ```bash
 
 ---
-- name: Test Variable is Defined Demo 
+- name: Install packages Based on conditionals
   hosts: rhelnode
   vars:
      my_service: httpd
