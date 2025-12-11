@@ -62,11 +62,15 @@ RUNNING TASKS CONDITIONALLY IN ANSIBLE:
 ````
 **Common Distros:**
   | ansible_distribution | ansible_os_family | 
-  |______________________|____________________|
+  |----------------------|-------------------|
   | Ubuntu                | Debian | 
+  
   | RedHat                | RedHat | 
+  
   | CentOS                | RedHat | 
+  
   | Fedora                 | RedHat | 
+  
   | Kali                 | Debian | 
 
 
