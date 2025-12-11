@@ -64,13 +64,13 @@ RUNNING TASKS CONDITIONALLY IN ANSIBLE:
   | ansible_distribution | ansible_os_family | 
   |----------------------|-------------------|
   | Ubuntu                | Debian | 
-  
+  |                        |       |
   | RedHat                | RedHat | 
-  
+ |                        |       |
   | CentOS                | RedHat | 
-  
+ |                        |       |
   | Fedora                 | RedHat | 
-  
+   |                        |       |
   | Kali                 | Debian | 
 
 
