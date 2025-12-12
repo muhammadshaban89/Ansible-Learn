@@ -67,7 +67,7 @@ changed status.
 - 5:Ansible treats the `notify statement` as an array and iterates over the handler names.
 
 **EXAMPLE2:**
-```
+```yaml
 - name: Deploy NGINX config and website files
   hosts: webservers
   become: true
@@ -104,6 +104,7 @@ changed status.
         state: reloaded
 ```
 
-- **Note the `notify ` section and `Handlers` section , in notify section ` - reload firewall` is notified first and then `- restart nginx
-`, where as in `handlers ` section `restart nginx` is defined fisrt and then `reload firewall` **
+- Note the `notify ` section and `Handlers` section , in notify section ` - reload firewall` is notified first and then `- restart nginx
+`, where as in `handlers ` section `restart nginx` is defined fisrt and then `reload firewall`.
+
 - so `handlers` section will restart `nginx` and then  reload `firewalld`. See point# 1 above.
