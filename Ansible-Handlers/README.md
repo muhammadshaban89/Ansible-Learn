@@ -42,7 +42,7 @@ reloaded so that the changed configuration takes effect.
         name: nginx
         state: restarted
   ```
-What does it do?
+**What does it do?**
 
 - The copy task pushes  `default.conf` to `/etc/nginx/conf.d/`.
 - If the file changes, it notifies the restart nginx handler.
@@ -67,6 +67,7 @@ changed status.
 - 5:Ansible treats the `notify statement` as an array and iterates over the handler names.
 
 **EXAMPLE2:**
+
 ```yaml
 - name: Deploy NGINX config and website files
   hosts: webservers
@@ -103,7 +104,6 @@ changed status.
         name: firewalld
         state: reloaded
 ```
-
 - Note the `notify ` section and `Handlers` section , in notify section ` - reload firewall` is notified first and then `- restart nginx
 `, where as in `handlers ` section `restart nginx` is defined fisrt and then `reload firewall`.
 
