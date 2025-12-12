@@ -107,7 +107,9 @@ changed status.
 - Note the `notify ` section and `Handlers` section , in notify section ` - reload firewall` is notified first and then `- restart nginx
 `, where as in `handlers ` section `restart nginx` is defined fisrt and then `reload firewall`.
 
+- so `handlers` section will restart `nginx` and then  reload `firewalld`. See point# 1 above.
+
+
 Thanks:
 
 👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
-- so `handlers` section will restart `nginx` and then  reload `firewalld`. See point# 1 above.
