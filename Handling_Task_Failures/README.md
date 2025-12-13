@@ -81,9 +81,9 @@ MANAGING TASK ERRORS IN PLAYS :
       debug:
         var: health_result.stdout
   ```
-- Exit code `1` (already stopped) is treated as success.
   
-  ***Best practice:**
+***Best practice:**
+
 - Use `failed_when` for fine‑grained control instead of blindly using `ignore_errors`.
 - Always combine with `registe`r to capture task results.
 - Keep conditions explicit and readable for maintainability.
