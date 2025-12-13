@@ -14,7 +14,9 @@ MANAGING TASK ERRORS IN PLAYS :
   
 **EXAMPLE:**
 ```yaml
-- hosts: webservers
+- name: Remove old Package and Install new
+  hosts: rhelnode
+  gather_facts: no
   tasks:
     - name: Remove old package (may not exist)
       yum:
@@ -33,7 +35,9 @@ MANAGING TASK ERRORS IN PLAYS :
 - Normally when a task fails and the play aborts on that host, any handlers that had been notified by earlier tasks in the play will not run.
 - If you set the `force_handlers: yes` keyword on the play, thennotified `handlers` are called even if the play aborted because a later task failed.
 ```yaml
-- hosts: webservers
+- name: Test Force Handlers
+  gather_facts: no
+  hosts: rhelnode
   force_handlers: yes
   tasks:
     - name: Install nginx
@@ -65,7 +69,7 @@ MANAGING TASK ERRORS IN PLAYS :
 ```yaml
  
 - name: Demo of failed_when usage
-  hosts: localhost
+  hosts: rhelnode
   gather_facts: no
 
   tasks:
@@ -103,7 +107,7 @@ MANAGING TASK ERRORS IN PLAYS :
 ```yaml
 ---
 - name: Demonstrate changed_when usage
-  hosts: webservers
+  hosts: rhelnode
   become: yes
 
   tasks:
@@ -133,7 +137,7 @@ MANAGING TASK ERRORS IN PLAYS :
 ```yaml
 ---
 - name: Validate NGINX service
-  hosts: localhost
+  hosts: rhelnode
   gather_facts: no
 
   tasks:
