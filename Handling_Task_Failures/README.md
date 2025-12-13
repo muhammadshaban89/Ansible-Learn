@@ -128,6 +128,26 @@ MANAGING TASK ERRORS IN PLAYS :
       debug:
         msg: "Disk usage is {{ disk_usage.stdout }}%"
 ```
+**EXAMPLE `changed_when: false`:
+
+```yaml
+---
+- name: Validate NGINX service
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Check NGINX status
+      command: systemctl status nginx
+      register: nginx_status
+      changed_when: false
+      failed_when: "'inactive' in nginx_status.stdout"
+
+    - name: Show NGINX status output
+      debug:
+        var: nginx_status.stdout
+```
+
 *What this playbook do?*
 
 - Install `nginx: Standard` package task.
