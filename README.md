@@ -30,3 +30,5 @@ Ansible  Guide for biggners
 **14: Ansible_Conditionals**
 
 **15: Ansible_Handlers**
+
+**16: Handling_Task_Failures**
