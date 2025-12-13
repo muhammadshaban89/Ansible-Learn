@@ -27,7 +27,7 @@ MANAGING TASK ERRORS IN PLAYS :
         state: present
 ```
 
-**2-Forcing Execution of Handlers after Task Failure **
+**2-Forcing Execution of Handlers after Task Failure**
 
 - Normally when a task fails and the play aborts on that host, any handlers that had been notified by earlier tasks in the play will not run.
 - If you set the `force_handlers: yes` keyword on the play, thennotified `handlers` are called even if the play aborted because a later task failed.
