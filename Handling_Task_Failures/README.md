@@ -29,8 +29,8 @@ MANAGING TASK ERRORS IN PLAYS :
         name: curl
         state: latest
 
-          #first task will fail as "xyz" is not a pckg
-          #so play will be aborted if ignore_errors: yes is not mentioned or commented
+          #first task will fail as "xyz" is not a package
+          #so play will be aborted if "ignore_errors: yes" is not mentioned or commented
 
 ```
 
