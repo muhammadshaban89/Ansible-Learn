@@ -62,17 +62,24 @@ MANAGING TASK ERRORS IN PLAYS :
 - `failed_when` is one of the most powerful Ansible directives because it lets you define custom failure conditions for a task.
 - Instead of relying only on the command’s exit code, you can decide when a task should be considered failed (or not).
 
-  ```yaml
-  - name: Learning failed_when
-  hosts: rhelnode
+```yaml
+ 
+- name: Demo of failed_when usage
+  hosts: localhost
   gather_facts: no
+
   tasks:
-    - name: Try to stop nginx
-      service:
-        name: nginx
-        state: stopped
-      register: stop_result
-      failed_when: stop_result.rc not in [0, 1]
+    - name: Run a health check script
+      command: /usr/local/bin/healthcheck.sh
+      register: health_result
+      changed_when: false
+      failed_when:
+        - "'ERROR' in health_result.stdout"
+        - health_result.rc != 0
+
+    - name: Show health check output
+      debug:
+        var: health_result.stdout
   ```
 - Exit code `1` (already stopped) is treated as success.
   
