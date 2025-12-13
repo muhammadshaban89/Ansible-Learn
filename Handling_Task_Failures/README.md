@@ -14,20 +14,24 @@ MANAGING TASK ERRORS IN PLAYS :
   
 **EXAMPLE:**
 ```yaml
-- name: Remove old Package and Install new
+- name: Install Latest Packages
   hosts: rhelnode
   gather_facts: no
   tasks:
-    - name: Remove old package (may not exist)
+    - name: install xyz package
       yum:
-        name: oldpackage
-        state: absent
+        name: xyz
+        state: latest
       ignore_errors: yes
 
-    - name: Install new package
+    - name: install new package
       yum:
         name: curl
-        state: present
+        state: latest
+
+          #first task will fail as "xyz" is not a pckg
+          #so play will be aborted if ignore_errors: yes is not mentioned or commented
+
 ```
 
 **2-Forcing Execution of Handlers after Task Failure**
