@@ -22,7 +22,7 @@ are executed.
             dest: /etc/yum/pluginconf.d/versionlock.list
             line: tzdata-2016j-1
             state: present
-      when: ansible_distribution == "RedHat"" 
+       when: ansible_os_family == "RedHat"
 ```
 - Blocks also allow for error handling in combination with the `rescue` and `always` statements.
 -  If any task in a block fails, tasks in its `rescue` block are executed in order to recover.
@@ -54,7 +54,7 @@ are executed.
             line: tzdata-2016j-1
             state: present
 
-      when: ansible_distribution == "RedHat"
+       when: ansible_os_family == "RedHat"
       rescue:
         - name: print error message
           debug:
