@@ -32,3 +32,5 @@ Ansible  Guide for biggners
 **15: Ansible_Handlers**
 
 **16: Handling_Task_Failures**
+
+**17 Ansible_Blocks_&_Errors_Handling**
