@@ -29,9 +29,11 @@ are executed.
 -   After the tasks in the block clause run, as well as the tasks in the rescue clause if there was a failure, then tasks in the 
 `always` clause run. To summarize:
 
-  • block: Defines the main tasks to run. 
-  • rescue: Defines the tasks to run if the tasks defined in the block clause fail. 
-  • always: Defines the tasks that will always run independently of the success or failure of tasks defined in the block and rescue clauses. 
+  • **block:** Defines the main tasks to run. 
+  
+  • **rescue:** Defines the tasks to run if the tasks defined in the block clause fail. 
+  
+  • **always:** Defines the tasks that will always run independently of the success or failure of tasks defined in the block and rescue clauses. 
 
 **EXAMPLE-2** 
 
