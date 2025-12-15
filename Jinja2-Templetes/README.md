@@ -176,6 +176,7 @@ ansible_managed = Ansible managed
 - Jinja2 templete:
 
 ```yaml
+Welcome to:  {{ ansible_facts['fqdn']
 System total memory: {{ ansible_facts['memtotal_mb'] }} MiB. 
 System processor count: {{ ansible_facts['processor_count'] }} 
 
