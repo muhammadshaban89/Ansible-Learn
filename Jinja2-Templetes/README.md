@@ -182,11 +182,10 @@ System processor count: {{ ansible_facts['processor_count'] }}
       file: 
         src: /etc/issue 
         dest: /etc/issue.net 
-        state: link 
-		owner: root 
-		group: root 
+        state: link
+		owner: root
+ 		group: root 
 		force: yes 
- 
 ```
 **SUMMERY**
 
