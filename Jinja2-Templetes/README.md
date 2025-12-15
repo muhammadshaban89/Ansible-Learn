@@ -65,7 +65,7 @@ tasks:
 
 ```yaml
 ansible_managed = Ansible managed 
-``
+```
 - To include the ansible_managed string inside a Jinja2 template, use the following syntax:  
  
 ```yaml
