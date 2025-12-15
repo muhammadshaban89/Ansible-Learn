@@ -229,3 +229,7 @@ System processor count: {{ ansible_facts['processor_count'] }}
 - You can use Jinja2 templates to dynamically construct files for deployment.  
 - A Jinja2 template is usually composed of two elements: variables and expressions. Those variables and expressions are replaced with values when the Jinja2 template is rendered.  
 - Jinja2 filters transform template expressions from one kind or format of data into another. 
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
