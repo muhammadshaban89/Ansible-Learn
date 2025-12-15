@@ -47,10 +47,10 @@ TEMPLATING FILES:
 
 ```yaml
 tasks:
-- name: template render
-  template: 
-    src: /tmp/j2-template.j2 
-    dest: /tmp/dest-config-file.txt 
+  - name: template render
+    template: 
+      src: /tmp/j2-template.j2 
+      dest: /tmp/dest-config-file.txt 
 ```
 
 - The `template` module also allows you to specify the owner (the user that owns the file), group, permissions, and SELinux context of the deployed file, just like the file module.
