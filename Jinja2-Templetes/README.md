@@ -170,7 +170,7 @@ ansible_managed = Ansible managed
         msg: "{{ mydata | to_nice_yaml }}"
 ```
 
-**JNJA2 Templete Example**
+**JINJA2 Templete Example**
 
 
 - Jinja2 templete:
