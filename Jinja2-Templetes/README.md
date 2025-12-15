@@ -110,12 +110,13 @@ ansible_managed = Ansible managed
 
 - Jinja2 uses the `if` statement to provide conditional control. 
 - This allows you to put a line in a `deployed file` if certain conditions are met.
-- In the following example, the value of the `result` variable is placed in the deployed file only if the value of the `finished` variable is `True`
 
 ```yaml
-{% if finished %} 
-{{ result }} 
-{% endif %} 
+{% if ansible_os_family == "RedHat" %}
+yum install httpd
+{% else %}
+apt-get install apache2
+{% endif %}
 ```
 **VARIABLE FILTERS** 
 
