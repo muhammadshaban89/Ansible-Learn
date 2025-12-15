@@ -46,10 +46,11 @@ TEMPLATING FILES:
 	* The value associated with the `dest` key specifies the file to be created on the destination hosts   
 
 ```yaml
-tasks: - name: template render
-template: 
-  src: /tmp/j2-template.j2 
-  dest: /tmp/dest-config-file.txt 
+tasks:
+- name: template render
+  template: 
+    src: /tmp/j2-template.j2 
+    dest: /tmp/dest-config-file.txt 
 ```
 
 - The `template` module also allows you to specify the owner (the user that owns the file), group, permissions, and SELinux context of the deployed file, just like the file module.
