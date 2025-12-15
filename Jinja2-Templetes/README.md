@@ -138,10 +138,40 @@ ansible_managed = Ansible managed
 
 ```yaml
 {{ output | from_json }} 
-{{ out put | from_yaml }}  
+{{ out put | from_yaml }}
 ```
 
-**EXAMPLES**
+**Filters_EXAMPLE**
+```yaml
+- name: Show variable in different formats
+  hosts: localhost
+  gather_facts: no
+  vars:
+    mydata:
+      name: Muhammad
+      role: Engineer
+      skills: ["Ansible", "Kubernetes", "AWS"]
+
+  tasks:
+    - name: Show as JSON
+      debug:
+        msg: "{{ mydata | to_json }}"
+
+    - name: Show as YAML
+      debug:
+        msg: "{{ mydata | to_yaml }}"
+
+    - name: Show as pretty JSON
+      debug:
+        msg: "{{ mydata | to_nice_json }}"
+
+    - name: Show as pretty YAML
+      debug:
+        msg: "{{ mydata | to_nice_yaml }}"
+```
+
+**JNJA2 Templete Example**
+
 
 - Jinja2 templete:
 
