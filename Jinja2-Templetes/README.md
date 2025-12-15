@@ -200,7 +200,8 @@ System processor count: {{ ansible_facts['processor_count'] }}
       register: motd  
     - name: Display stat results 
       debug: 
-        var: motd  
+        var: motd
+
     - name: Copy custom /etc/issue file 
       copy: 
         src: files/issue 
@@ -215,7 +216,12 @@ System processor count: {{ ansible_facts['processor_count'] }}
         state: link
         owner: root
         group: root
-        force: yes 
+        force: yes
+
+#/etc/issue :  Displays a message before the login prompt on local terminals (TTYs).
+#When you log in via console (e.g., Ctrl+Alt+F2), the contents of /etc/issue are shown right before the login: prompt.
+#
+ 
 ```
 **SUMMERY**
 
