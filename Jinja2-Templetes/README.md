@@ -78,7 +78,7 @@ ansible_managed = Ansible managed
 
 **Using Loops**
 
-- Jinja2 uses the for statement to provide looping functionality. 
+- Jinja2 uses the `for` statement to provide looping functionality. 
 
 
 
@@ -96,7 +96,7 @@ ansible_managed = Ansible managed
 
 ```
 
-**hosts.j2 **
+**hosts.j2**
 
 ```yaml
 {% for host in groups['all'] %} 
@@ -108,8 +108,8 @@ ansible_managed = Ansible managed
 
 **Using Conditionals:** 
 
-- Jinja2 uses the if statement to provide conditional control. 
-- This allows you to put a line in a deployed file if certain conditions are met.
+- Jinja2 uses the `if` statement to provide conditional control. 
+- This allows you to put a line in a `deployed file` if certain conditions are met.
 - In the following example, the value of the `result` variable is placed in the deployed file only if the value of the `finished` variable is `True`
 
 ```yaml
