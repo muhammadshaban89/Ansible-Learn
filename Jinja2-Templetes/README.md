@@ -220,7 +220,6 @@ System processor count: {{ ansible_facts['processor_count'] }}
 
 #/etc/issue :  Displays a message before the login prompt on local terminals (TTYs).
 #When you log in via console (e.g., Ctrl+Alt+F2), the contents of /etc/issue are shown right before the login: prompt.
-#
  
 ```
 **SUMMERY**
