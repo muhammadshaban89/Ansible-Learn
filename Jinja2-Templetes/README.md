@@ -8,7 +8,7 @@ TEMPLATING FILES:
 - With this method, you can write a `template` configuration file that is automatically customized for the managed host when the file is deployed, using Ansible variables and facts.
 - This can be easier to control and is less error-prone. 
 
-*JINJA2 Templete:*
+*JINJA2 Template:*
 ----------------
 
 - Ansible uses the `Jinja2 templating` system for `template` files. 
