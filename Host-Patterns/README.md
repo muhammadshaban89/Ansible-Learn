@@ -26,9 +26,9 @@ SELECTING HOSTS WITH HOST PATTERNS
 
 ```yaml
 - hosts: '*.example.com' 
+```
 
 -  hosts or host groups that begin with `datacenter`.   
-
 ```yaml
 - hosts: 'datacenter*' 
 ```
