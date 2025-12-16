@@ -64,3 +64,7 @@ ansible-config list |grep -i forks
 
 - *For certain purposes, each batch of hosts counts as if it were a full play running on a subset of hosts. This means that if an entire batch fails, the play fails, which causes the entire playbook run to fail.*  
 - *In the previous scenario with `serial: 2` set, if something is wrong and the play fails for the first two hosts processed, then the playbook will abort and the remaining three hosts will not be run through the play. This is a useful feature because only a subset of the servers would be unavailable, leaving the service degraded rather than down.*
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
