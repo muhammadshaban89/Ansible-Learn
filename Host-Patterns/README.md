@@ -4,8 +4,7 @@ SELECTING HOSTS WITH HOST PATTERNS
 - Host patterns are used to specify the hosts to target by a play or ad `hoc command`. 
 - In its simplest form, the name of a managed host or a host group in the `inventory` is a host pattern that specifies that host or host group.
 - It is usually easier to control what hosts a play targets by carefully using host patterns and having appropriate inventory groups, instead of setting complex conditionals on the play's tasks. 
-- The most basic host pattern is the name for a single managed host listed in the inventory. 
-- This specifies that the host will be the only one in the inventory that will be acted upon by the ansible command. 
+- The most basic host pattern is the name for a single managed host listed in the inventory. This specifies that the host will be the only one in the inventory that will be acted upon by the ansible command. 
 - If an IP address is listed explicitly in the inventory, instead of a host name, then it can be used as a host pattern. 
 - If the IP address is not listed in the inventory, then you cannot use it to specify the host even if the IP address resolves to that host name in the DNS.
 - When a group name is used as a host pattern, it specifies that Ansible will act on the hosts that are members of the group.
