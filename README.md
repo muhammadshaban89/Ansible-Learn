@@ -37,6 +37,12 @@ Ansible  Guide for biggners
 
 **18: Jinja2-Templates**
 
+**19: Host-Patterns**
+
+**20: PARALLELISM+Rolling_Updates**
+
+
+
 
 
 
