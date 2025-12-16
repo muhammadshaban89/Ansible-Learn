@@ -69,3 +69,6 @@ SELECTING HOSTS WITH HOST PATTERNS
 - hosts: datacenter,!test2.example.com 
 ``` 
 
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
