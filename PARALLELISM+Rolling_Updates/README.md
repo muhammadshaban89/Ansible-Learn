@@ -26,7 +26,8 @@ ansible-config list |grep -i forks
 - In this case, you can usually set forks to a much higher value, possibly closer to 100, and see performance improvements.   
 
 - If your playbooks run a lot of code on the control node, then you should raise the fork limit judiciously. 
-- If you use Ansible to manage network routers and switches, then most of those modules run on the control node and not on the network device. 
+- If you use Ansible to manage network routers and switches, then most of those modules run on the control node and not on the network device.
+- For nemtwork managed hosts,ansible run modules on control nodes and then special connections methods are used to communicate with network devices, like CLI over SSH, XML over SSH or API over HTTP(s)
 - Because of the higher load this places on the control node, its capacity to support increases in the number of forks will be significantly lower than for a control node managing only Linux hosts. 
 - **You can override the default setting for forks from the command line in the Ansible configuration file.**
 - **Both the ansible and the ansible-playbook commands offer the `-f` or `--forks` options to specify the number of forks to use**
