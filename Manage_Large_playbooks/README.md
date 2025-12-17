@@ -29,7 +29,7 @@ IMPORTING PLAYBOOKS:
 - name: Prepare the database server 
       import_playbook: db.yml
 ```
-**web.yml & db.yml **
+**web.yml & db.yml**
 
 ```yaml
 - name: Configure web server
