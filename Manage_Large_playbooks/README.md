@@ -10,7 +10,7 @@ INCLUDING OR IMPORTING FILES:
 - There are two operations that Ansible can use to bring content into a playbook. You can `include`
 content, or you can `import` content.
 - When you `include` content, it is a `dynamic` operation. Ansible processes included content during the run of the playbook, as content is reached.
-- When you `impor`t content, it is a `static` operation. Ansible preprocesses `imported` content when the playbook is initially parsed, before the run starts.
+- When you `import` content, it is a `static` operation. Ansible preprocesses `imported` content when the playbook is initially parsed, before the run starts.
 
 IMPORTING PLAYBOOKS:
 -------------------------------------------
