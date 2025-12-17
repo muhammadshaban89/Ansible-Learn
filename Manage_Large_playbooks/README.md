@@ -175,7 +175,7 @@ environment.
 
 ````
 
--OR
+- OR --> u can use it as --> As per your requirements.
 
 ```yaml
 - name: Import play file and set the variable
@@ -188,3 +188,6 @@ environment.
 - Ansible makes the passed variables available to the tasks imported from the external file.
 - You can use the same technique to make play files more reusable. When incorporating a play file into a playbook, pass the variables to use for the play execution .
 
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
