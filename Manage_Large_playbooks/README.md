@@ -28,7 +28,7 @@ IMPORTING PLAYBOOKS:
 - name: Prepare the database server 
       import_playbook: db.yml
 ```
-**web.yml & db.yml**
+**web.yml**
 
 ```yaml
 - name: Configure web server
@@ -46,7 +46,7 @@ IMPORTING PLAYBOOKS:
         state: started
         enabled: yes
 ```
--
+- **db.yml**
 ```yaml
 - name: Configure database server
   hosts: dbservers
@@ -76,12 +76,12 @@ IMPORTING AND INCLUDING TASKS
 ```yaml
 - name: Installs the httpd package 
   yum:
-     name: httpd 
-     state: latest
+    name: httpd 
+    state: latest
 - name: Starts the httpd service 
   service:
-      name: httpd
-      state: started
+    name: httpd
+    state: started
 ```
 
 - You can statically import a task file into a play inside a playbook by using the `import_tasks` feature.
@@ -93,8 +93,8 @@ IMPORTING AND INCLUDING TASKS
 ```yaml
 - name: Install web server 
   hosts: webservers 
-    tasks:
-      - import_tasks: webserver_tasks.yml
+  tasks:
+    - import_tasks: webserver_tasks.yml
 ```
 
 - When you import a task file, the tasks in that file are directly inserted when the playbook is parsed. 
@@ -110,10 +110,10 @@ IMPORTING AND INCLUDING TASKS
 **Example_include_task:**
 
 ```yaml
-- name: Install web server 
+- name: Install web server
   hosts: webservers 
-    tasks:
-      - include_tasks: webserver_tasks.yml
+  tasks:
+    - include_tasks: webserver_tasks.yml
 
 ```
 
@@ -137,55 +137,45 @@ environment.
 - Variables can be used to parameterize play and task elements to expand the application of tasks and plays.
 
 ```yaml
-- name: Configure web server
-  hosts: webservers
-  become: yes
-  tasks:
-    - name: Install httpd
-      package:
-        name: httpd
-        state: present
-
-    - name: Ensure httpd is running
-      service:
-        name: nginx
-        state: started
-        enabled: yes
-
+- name: Install web package
+  package:
+    name: nginx
+    state: latest
+- name: Starts the nginx service
+  service:
+    name: nginx
+    state: started
 
 ```
 
 - Can be written as:
 
 ```yaml
-- name : Install and webserver
-  hosts: webservers
-    - name: Install the {{ package }} package 
-      yum:
-        name: "{{ package }}"
-        state: latest
-
-    - name: Start the {{ service }} service 
-        service:
-          name: "{{ service }}" 
-          enabled: true
-          state: started
+- name: Install web package
+  package:
+    name: "{{ package }}"
+    state: latest
+- name: Starts the nginx service
+  service:
+    name: "{{ service }}"
+    state: started
 ```
 
 - and it can be used as:
 
 ```yaml
 - name: Install and configure packages
+  hosts: rhelnode
   tasks:
-    - name: Import task file and set variables 
-      import_tasks: task.yml
+    - name: Import task file and set variables
+      import_tasks: webserver_tasks.yml
       vars:
-        package: httpd
-        service: httpd
+         package: firewalld
+         service: firewalld
+
 ````
 
-- Ansible makes the passed variables available to the tasks imported from the external file.
-- You can use the same technique to make play files more reusable. When incorporating a play file into a playbook, pass the variables to use for the play execution .
+-OR
 
 ```yaml
 - name: Import play file and set the variable
@@ -194,3 +184,7 @@ environment.
      package: mariadb
 
 ```
+
+- Ansible makes the passed variables available to the tasks imported from the external file.
+- You can use the same technique to make play files more reusable. When incorporating a play file into a playbook, pass the variables to use for the play execution .
+
