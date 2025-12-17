@@ -28,7 +28,7 @@ IMPORTING PLAYBOOKS:
 - name: Prepare the database server 
       import_playbook: db.yml
 ```
-**web.yml**
+- **web.yml**
 
 ```yaml
 - name: Configure web server
