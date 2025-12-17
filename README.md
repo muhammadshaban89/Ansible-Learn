@@ -41,6 +41,8 @@ Ansible  Guide for biggners
 
 **20: PARALLELISM+Rolling_Updates**
 
+**21: Manage_Larg_playbooks**
+
 
 
 
