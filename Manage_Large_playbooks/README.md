@@ -22,7 +22,6 @@ IMPORTING PLAYBOOKS:
 **EXAMPLE**
 
 ```yml
-
 - name: Prepare the web server 
     import_playbook: web.yml
 
@@ -72,7 +71,7 @@ IMPORTING AND INCLUDING TASKS
 - A task file is a file that contains a flat list of tasks.
 
 
-**Example_webserver_tasks.yml :**
+**Example: webserver_tasks.yml :**
 
 ```yaml
 - name: Installs the httpd package 
@@ -94,8 +93,8 @@ IMPORTING AND INCLUDING TASKS
 ```yaml
 - name: Install web server 
   hosts: webservers 
-      tasks:
-         - import_tasks: webserver_tasks.yml
+    tasks:
+      - import_tasks: webserver_tasks.yml
 ```
 
 - When you import a task file, the tasks in that file are directly inserted when the playbook is parsed. 
@@ -114,8 +113,8 @@ IMPORTING AND INCLUDING TASKS
 ```yaml
 - name: Install web server 
   hosts: webservers 
-      tasks:
-         - include_tasks: webserver_tasks.yml
+    tasks:
+      - include_tasks: webserver_tasks.yml
 
 ```
 
@@ -132,24 +131,27 @@ IMPORTING AND INCLUDING TASKS
 
 
 DEFINING VARIABLES FOR EXTERNAL PLAYS AND TASKS:
------------------------------------------------------------------------------------------------
+------------------------------------------------
 - The incorporation of plays or tasks from external files into playbooks using Ansible's import and include features greatly enhance the ability to reuse tasks and playbooks across an Ansible
 environment.
--  To maximize the possibility of reuse, these task and play files should be as generic as possible. 
+- To maximize the possibility of reuse, these task and play files should be as generic as possible. 
 - Variables can be used to parameterize play and task elements to expand the application of tasks and plays.
 
 ```yaml
+- name: Configure web server
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install httpd
+      package:
+        name: httpd
+        state: present
 
-- name: Install the httpd package 
-  yum:
-     name: httpd
-     state: latest
-
-- name: Start the httpd service 
-  service:
-  name: httpd 
-  enabled: true 
-  state: started
+    - name: Ensure httpd is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
 
 
 ```
@@ -157,28 +159,30 @@ environment.
 - Can be written as:
 
 ```yaml
+- name : Install and webserver
+  hosts: webservers
+    - name: Install the {{ package }} package 
+      yum:
+        name: "{{ package }}"
+        state: latest
 
-- name: Install the {{ package }} package 
-  yum:
-     name: "{{ package }}"
-     state: latest
-
-- name: Start the {{ service }} service 
-  service:
-     name: "{{ service }}" 
-     enabled: true
-     state: started
+    - name: Start the {{ service }} service 
+        service:
+          name: "{{ service }}" 
+          enabled: true
+          state: started
 ```
 
 - and it can be used as:
 
 ```yaml
-tasks:
-- name: Import task file and set variables 
-  import_tasks: task.yml
-  vars:
-      package: httpd
-      service: httpd
+- name: Install and configure packages
+  tasks:
+    - name: Import task file and set variables 
+      import_tasks: task.yml
+      vars:
+        package: httpd
+        service: httpd
 ````
 
 - Ansible makes the passed variables available to the tasks imported from the external file.
