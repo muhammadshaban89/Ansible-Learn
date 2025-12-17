@@ -29,6 +29,42 @@ IMPORTING PLAYBOOKS:
 - name: Prepare the database server 
       import_playbook: db.yml
 ```
+**web.yml & db.yml **
+
+```yaml
+- name: Configure web server
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install NGINX
+      package:
+        name: nginx
+        state: present
+
+    - name: Ensure NGINX is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+```
+-
+```yaml
+- name: Configure database server
+  hosts: dbservers
+  become: yes
+  tasks:
+    - name: Install MariaDB
+      package:
+        name: mariadb-server
+        state: present
+
+    - name: Ensure MariaDB is running
+      service:
+        name: mariadb
+        state: started
+        enabled: yes
+```
+
 
 IMPORTING AND INCLUDING TASKS
 -------------------------------------------------------------
