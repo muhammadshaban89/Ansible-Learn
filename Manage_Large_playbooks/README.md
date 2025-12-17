@@ -99,11 +99,10 @@ IMPORTING AND INCLUDING TASKS
 
 - When you import a task file, the tasks in that file are directly inserted when the playbook is parsed. 
 - Because `import_tasks` statically imports the tasks when the playbook is parsed, there are some effects on how it works:
-
-	  When using the `import_tasks` feature, conditional statements set on the import, such as
+- When using the `import_tasks` feature, conditional statements set on the import, such as
 `when`, are applied to each of the tasks that are imported.
-	  You cannot use `loops` with the `import_tasks` feature.
-	  If you use a variable to specify the name of the file to import, then you cannot use a host or group inventory variable.
+- You cannot use `loops` with the `import_tasks` feature.
+- if you use a variable to specify the name of the file to import, then you cannot use a host or group inventory variable.
 
 
 - You can also dynamically include a task file into a play inside a playbook by using the `include_tasks` feature.
