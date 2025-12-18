@@ -47,3 +47,7 @@ locally-specific details you need.
 *In addition to writing, using, reusing, and sharing your own roles, you can get roles from other sources.*
 *Some roles are included as part of Red Hat Enterprise Linux, in the rhel-system-roles package.* 
 *You can also get numerous community-supported roles from the Ansible Galaxy website.*
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
