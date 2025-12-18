@@ -142,4 +142,8 @@ lab_users:
 - **Scalability:** Add more roles (e.g., `db`, `monitoring`) without bloating the main playbook.  
 - **Clarity:** `site.yml` just orchestrates roles, keeping it readable.
 
+
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
 ---
