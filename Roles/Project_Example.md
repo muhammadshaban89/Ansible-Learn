@@ -56,6 +56,8 @@ ansible-project/
 
 ### `roles/repo_setup/templates/repo.j2`
 ```yaml
+# /etc/yum.repos.d/local-AppStream
+[local-AppStream]
 name=Local AppStream
 baseurl=file:///myrepo/AppStream
 enabled=1
@@ -100,7 +102,7 @@ server {
 - name: Deploy nginx.conf
   template:
     src: nginx.conf.j2
-    dest: /etc/nginx/nginx.conf
+    dest: /etc/nginx/conf.d/default.conf
   notify: Restart nginx
 ```
 
