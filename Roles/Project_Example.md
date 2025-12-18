@@ -1,10 +1,16 @@
-let’s build a **multi‑role project skeleton** so you can see how everything fits together in a clean orchestration setup for the lab.
+multi-role project skeleton 
+---------------------------
+- Create Local Repo.
+- Create a sample webserver.
+- Create Users.
 
----
+ ***Use  BM Command to create role like  repo_setup,nginx,users **
+```yaml
+ansible-galaxy init role_name
+```
+
 
 ## Project Layout
-Here’s a typical structure:
-
 ```
 ansible-project/
 ├── site.yml                # Main orchestration playbook
@@ -13,6 +19,7 @@ ansible-project/
     ├── repo_setup/
     │   ├── tasks/main.yml
     │   ├── vars/main.yml
+        ├── templates/repo.j2
     │   └── defaults/main.yml
     ├── nginx/
     │   ├── tasks/main.yml
@@ -47,6 +54,20 @@ ansible-project/
 
 ##  Role Examples
 
+### `roles/repo_setup/templates/repo.j2`
+```yaml
+name=Local AppStream
+baseurl=file:///myrepo/AppStream
+enabled=1
+gpgcheck=0
+
+# /etc/yum.repos.d/local-BaseOS.repo
+[local-BaseOS]
+name=Local BaseOS
+baseurl=file:///myrepo/BaseOS
+enabled=1
+gpgcheck=0
+```
 ### `roles/repo_setup/tasks/main.yml`
 ```yaml
 - name: Configure local repo
@@ -56,7 +77,19 @@ ansible-project/
 ```
 
 ---
+### `roles/nginx/templates/nginx.conf.j2`
+```yaml
+server {
+    listen       80;
+    server_name  localhost;
 
+    location / {
+        root   /newsite;
+        index  index.html index.html;
+    }
+}
+
+```
 ### `roles/nginx/tasks/main.yml`
 ```yaml
 - name: Install NGINX
