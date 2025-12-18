@@ -37,8 +37,8 @@ ansible-project/
 ```yaml
 ---
 - name: Prepare all servers
-  hosts: all
-  become: yes
+  hosts: rhelnode
+  become: webservers
   roles:
     - repo_setup
     - users
