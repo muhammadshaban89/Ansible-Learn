@@ -14,6 +14,7 @@ locally-specific details you need.
 - The author of the `role` can also ensure that reasonable default values are set for those variables if you choose not to set them in the play.
 
 **What Are Ansible Roles?**
+- `Roles` are a structured way of grouping togather various functionalities and making it easier to resuse and share commaon setup tasks.
 - `Roles` are a structured way to organize playbooks into reusable components.
 - Instead of writing all tasks, handlers, variables, and templates in one big playbook, you split them into roles.
 - Each `role` has a standard directory layout so Ansible knows where to find things.
