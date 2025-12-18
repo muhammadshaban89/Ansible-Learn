@@ -4,7 +4,7 @@ multi-role project skeleton
 - Create a sample webserver.
 - Create Users.
 
- ***Use  BM Command to create role like  repo_setup,nginx,users **
+ **Use  BM Command to create role like  repo_setup,nginx,users**
 ```yaml
 ansible-galaxy init role_name
 ```
