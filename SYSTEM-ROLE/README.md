@@ -120,6 +120,3 @@ Given your lab automation goals, system roles help you:
 They remove the need to reinvent the wheel.
 
 ---
-
-
-Just tell me and I’ll assemble the full structure.
