@@ -185,8 +185,10 @@ Variables go in `vars:`:
 
 ```yaml
 timesync_ntp_servers:
-  - hostname: 0.pool.ntp.org
-  - hostname: 1.pool.ntp.org
+  - hostname:  server 0.asia.pool.ntp.org
+  - hostname:  server 1.asia.pool.ntp.org
+  - hostname:  server 2.asia.pool.ntp.org
+  - hostname:  server 3.asia.pool.ntp.org
 ```
 
 ---
