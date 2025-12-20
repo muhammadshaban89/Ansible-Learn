@@ -210,15 +210,3 @@ timesync_ntp_servers:
             - 8.8.8.8
 ```
 
----
-
-#  Why System Roles Matter (Especially for You)
-Given your lab automation goals, system roles help you:
-
-- Configure **networking** consistently across nodes  
-- Set up **storage** for repo mounts or Docker/K8s  
-- Ensure **time sync** for cluster consistency  
-- Manage **SELinux** cleanly  
-- Apply **kernel tuning** for Kubernetes or performance labs  They remove the need to reinvent the wheel.
-
----
