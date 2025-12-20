@@ -181,7 +181,7 @@ These roles are extremely powerful and save hours of manual YAML writing.
         name: "{{ timezone }}"
 ```
 
-Variables go in `vars:`:
+You can define Variables  in `vars:`:
 
 ```yaml
 timesync_ntp_servers:
