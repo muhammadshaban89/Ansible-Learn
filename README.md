@@ -43,6 +43,8 @@ Ansible  Guide for biggners
 
 **21: Manage_Larg_playbooks**
 
+**22: Ansible_System_Roles**
+
 
 
 
