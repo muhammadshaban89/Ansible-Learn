@@ -124,12 +124,12 @@ playbook, it may cause an automation failure or other problems*
 ```yaml
 ansible-galaxy install -r roles/requirements.yml
 ```
-- The `src` keyword specifies the Ansible Galaxy role name. If the role is not hosted on Ansible Galaxy, the src keyword indicates the role's URL.
+- The `src` keyword specifies the Ansible Galaxy role name. If the role is not hosted on Ansible Galaxy, the `src` keyword indicates the role's URL.
 - If the role is hosted in a source control repository, the `scm` attribute is required.
-- The ansible- galaxy command is capable of downloading and installing roles from either a Git-based or 
+- The `ansible- galaxy` command is capable of downloading and installing roles from either a Git-based or 
 mercurial-based software repository.
-- A Git-based repository requires an scm value of git, while a role hosted on a mercurial repository requires a value of `hg`.
-- If the role is hosted on Ansible Galaxy or as a tar archive on a web server, the scm keyword is omitted.
+- A Git-based repository requires an `scm` value of `git`, while a role hosted on a mercurial repository requires a value of `hg`.
+- If the role is hosted on Ansible Galaxy or as a tar archive on a web server, the `scm` keyword is omitted.
 - The `ansible-galaxy list` command can also manage local roles, such as those roles found in the roles directory of a playbook project.
 - A role can be removed locally with the ansible-galaxy remove subcommand. `ansible-galaxy remove nginx-acme-ssh`.
 
