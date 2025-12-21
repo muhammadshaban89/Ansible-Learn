@@ -65,7 +65,7 @@ hosts (for example, an error in the host name of the managed host in the invento
 - Learning how a playbook flows
 - Testing tasks one by one
   
-**2: use `--start-at-task`**:
+**3: use `--start-at-task`**:
 
 - The `--start-at-task` option allows you to start execution of a playbook from a specific task. It takes as an argument the name of the task at which to start.
   ```yaml
@@ -81,6 +81,47 @@ hosts (for example, an error in the host name of the managed host in the invento
 | **-vvv** | Adds **connection debugging**. Shows SSH details, control socket info, and connection negotiation. |
 | **-vvvv** | Adds **deep debugging**. Shows scripts executed on remote hosts, environment variables, and the user executing each script. Also shows internal Ansible operations. |
 
+**4: use `--check` or `-C`**:
+
+- You can use the   `ansible-playbook --check` or `-C` command to run smoke tests on a playbook.
+- This option executes the playbook without making changes to the managed hosts' configuration.
+-  If a module used within the playbook supports check mode then the changes that would have been made to the managed hosts are displayed but not performed.
+-   If check mode is not supported by a module then the changes are not displayed but the module still takes no action.
+```yaml
+ ansible-playbook --check playbook.yml 
+```
+- The `ansible-playbook --check` command might not work properly if your tasks use conditionals.
+- You can also control whether individual tasks run in check mode with the `check_mode` setting.
+-  If a task has `check_mode: ye`s set, it always runs in check mode, whether or not you passed the `--check` option to ansible-playbook.
+-  Likewise, if a task has `check_mode: no` set, it always runs normally, even if you pass `--check` to ansible-playbook.
+-  1:
+```yaml
+tasks:
+  - name: task always in check mode 
+    shell: uname -a 
+    check_mode: yes 
+```
+-2:
+```yaml
+tasks:
+  - name: task always runs even in check mode
+    shell: uname -a 
+    check_mode: no 
+```
+**5: use `--diff`**:
+- The ansible-playbook command also provides a `--diff` option.
+-  This option reports the changes made to the template files on managed hosts.
+-   If used with the `--check` option, those changes are displayed in the command's output but not actually made.
+-   `--diff` shows before and after differences for any file that Ansible modifies.like
+- Lines added
+- Lines removed
+- Lines changed
+- Template differences
+- Config file update
+
+```yaml
+ ansible-playbook --check --diff playbook.yml 
+```
 ---
 RECOMMENDED PRACTICES FOR PLAYBOOK MANAGEMENT:
 -----------------------------------------------
@@ -91,17 +132,13 @@ are listed below:
 or task name is displayed when the playbook is executed. This also helps document what each 
 play or task is supposed to accomplish, and possibly why it is needed. 
 
-
 *  Include comments to add additional inline documentation about tasks. 
-
 
 *  Make effective use of vertical white space. In general, organize task attributes vertically to make 
 them easier to read. 
 
-
 *  Consistent horizontal indentation is critical. Use spaces, not tabs, to avoid indentation errors. Set 
 up your text editor to insert spaces when you press the Tab key to make this easier. 
-
 
 *  Try to keep the playbook as simple as possible. Only use the features that you need.
 
