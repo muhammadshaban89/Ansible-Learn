@@ -1,13 +1,17 @@
 TROUBLESHOOTING PLAYBOOKS
 -------------------------
+You can troubleshoot playbook errors depending on the nature of errors.
+
+1:LOG FILES FOR ANSIBLE 
+-----------------------
 - By default, Red Hat Ansible Engine is not configured to log its output to any log file.
 - It provides a built-in logging infrastructure that can be configured through the `log_path` parameter in the default section of the ansible.cfg configuration file, or through the `$ANSIBLE_LOG_PATH` 
 environment variable.
 - If any or both are configured, Ansible stores output from both the `ansible` and `ansible-playbook` commands in the log file configured, either through the `ansible.cfg` configuration file or the `$ANSIBLE_LOG_PATH` environment variable. 
 - If you configure Ansible to write log files to `/var/log`, then Red Hat recommends that you configure `logrotate` to manage the Ansible log files.
 
-THE DEBUG MODULE
-----------------
+2:THE DEBUG MODULE
+------------------
 
 - The `debug` module provides insight into what is happening in the play.
 - This module can display the value for a certain variable at a certain point in the play.
@@ -35,8 +39,8 @@ THE DEBUG MODULE
       - "Version: {{ ansible_distribution_version }}"
 ```
 
-MANAGING ERRORS:
----------------
+3:MANAGING ERRORS:
+------------------
 
 - There are several issues than can occur during a playbook run, mainly related to the syntax of either the playbook or any of the templates it uses, or due to connectivity issues with the managed 
 hosts (for example, an error in the host name of the managed host in the inventory file).
