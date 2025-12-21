@@ -22,8 +22,8 @@ THE DEBUG MODULE
 - 1
   ```yaml
   - name: Show custom message with variable
-  debug:
-    msg: "The server {{ inventory_hostname }} belongs to {{ ansible_os_family }} family"
+    debug:
+      msg: "The server {{ inventory_hostname }} belongs to {{ ansible_os_family }} family"
   ```
 - 2
 ```yaml
