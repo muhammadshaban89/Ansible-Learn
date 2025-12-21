@@ -25,7 +25,7 @@ THE DEBUG MODULE
   debug:
     msg: "The server {{ inventory_hostname }} belongs to {{ ansible_os_family }} family"
   ```
--2
+- 2
 ```yaml
 - name: Show multiple variables
   debug:
