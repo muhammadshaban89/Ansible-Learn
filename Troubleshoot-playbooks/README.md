@@ -4,7 +4,8 @@ You can troubleshoot playbook errors depending on the nature of errors.
 
 1:LOG FILES FOR ANSIBLE 
 -----------------------
-- By default, Red Hat Ansible Engine is not configured to log its output to any log file.
+- Logs play an importent role for troubleshooting.
+- But,By default, Red Hat Ansible Engine is not configured to log its output to any log file.
 - It provides a built-in logging infrastructure that can be configured through the `log_path` parameter in the default section of the ansible.cfg configuration file, or through the `$ANSIBLE_LOG_PATH` 
 environment variable.
 - If any or both are configured, Ansible stores output from both the `ansible` and `ansible-playbook` commands in the log file configured, either through the `ansible.cfg` configuration file or the `$ANSIBLE_LOG_PATH` environment variable. 
