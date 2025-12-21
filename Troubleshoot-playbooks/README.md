@@ -85,15 +85,20 @@ hosts (for example, an error in the host name of the managed host in the invento
 RECOMMENDED PRACTICES FOR PLAYBOOK MANAGEMENT:
 
 - Some recommended practices for playbook development 
-are listed below: 
+are listed below:
+
 • Use a concise description of the play's or task's purpose to name plays and tasks. The play name 
 or task name is displayed when the playbook is executed. This also helps document what each 
 play or task is supposed to accomplish, and possibly why it is needed. 
+
 • Include comments to add additional inline documentation about tasks. 
+
 • Make effective use of vertical white space. In general, organize task attributes vertically to make 
 them easier to read. 
+
 • Consistent horizontal indentation is critical. Use spaces, not tabs, to avoid indentation errors. Set 
 up your text editor to insert spaces when you press the Tab key to make this easier. 
+
 • Try to keep the playbook as simple as possible. Only use the features that you need.
   
   
