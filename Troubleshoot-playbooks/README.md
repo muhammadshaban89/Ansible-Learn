@@ -32,12 +32,14 @@ environment variable.
   ```
 - 2
 ```yaml
-- name: Show multiple variables
-  debug:
-    msg:
-      - "Hostname: {{ inventory_hostname }}"
-      - "OS: {{ ansible_distribution }}"
-      - "Version: {{ ansible_distribution_version }}"
+- name: Debug Module
+  hosts: rhelnode
+   - name: Show multiple variables
+     debug:
+       msg:
+         - "Hostname: {{ inventory_hostname }}"
+         - "OS: {{ ansible_distribution }}"
+         - "Version: {{ ansible_distribution_version }}"
 ```
 
 3:MANAGING ERRORS:
