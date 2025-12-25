@@ -231,7 +231,7 @@ mkdir -p $BACKUP_DIR
 tar -czf $BACKUP_DIR/etc-backup-$(date +%F).tar.gz /etc
 find $BACKUP_DIR -type f -mtime +7 -delete
 ```
-**- what does it will do?**
+- **what does it will do?**
 
 ✔ Creates backup directory
 
