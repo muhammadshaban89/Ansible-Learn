@@ -260,5 +260,3 @@ Here’s a combined playbook automating multiple admin tasks:
         state: started
         enabled: yes
 ```
-
-Just tell me what task you want to automate next.
