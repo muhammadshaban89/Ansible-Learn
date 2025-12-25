@@ -325,3 +325,6 @@ This project automates:
 ### ✔ Backup Automation
 ### ✔ log_Rotate
 
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
