@@ -45,6 +45,10 @@ Ansible  Guide for biggners
 
 **22: Ansible_System_Roles**
 
+**23: Troubleshoot_playbooks**
+
+**24: Automating_linux_tasks**
+
 
 
 
