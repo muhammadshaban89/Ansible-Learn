@@ -53,8 +53,26 @@ simple_project/
     - backup
     - logrotate
 ```
-
 This playbook calls all roles in order.
+
+- OR _ You can write playbook as:
+```yaml
+- name: Automate Linux Administration Tasks
+  hosts: rhelnode
+  become: yes
+
+  roles:
+    - { role: users }
+    - { role: packages }
+    - { role: services }
+    - { role: files }
+    - { role: crone }
+    - { role: timesync }
+    - { role: backup, tags: ['backup'] }
+    - { role: logrotate }
+```
+- **you can define tags to run specific task using `--tags=tag-name` with `ansible-playbook` commond.**
+
 
 ---
 
