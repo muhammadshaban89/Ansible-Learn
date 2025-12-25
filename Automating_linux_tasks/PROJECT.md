@@ -1,9 +1,9 @@
----
 
-#  **Complete Ansible Project for Automating Linux Administration**
+Complete Ansible Project for Automating Linux Administration
+------------------------------------------------------------
 
 ##  **Project Structure**
-```
+```yaml
 simple_project/
 ├── site.yml
 ├── inventory/
