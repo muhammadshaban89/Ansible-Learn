@@ -66,9 +66,16 @@ This playbook calls all roles in order.
     name: "{{ item.name }}"
     shell: "{{ item.shell }}"
     state: present
-  loop:
-    - { name: "devops", shell: "/bin/bash" }
-    - { name: "tester", shell: "/bin/bash" }
+  loop:  "{{ admin_users }}"
+
+```
+- **Create Varaibles in roles/users/defaults/main.yml**
+```yaml
+admin_users:
+  - name: devops
+    shell: /bin/bash
+  - name: tester
+    shell: /bin/bash
 ```
 
 ---
@@ -78,15 +85,18 @@ This playbook calls all roles in order.
 ```yaml
 - name: Install common packages
   package:
-    name:
-      - vim
-      - tree
-      - wget
-      - net-tools
-      - nginx
+    name: "{{ common_packages }}
     state: present
 ```
-
+- **Define Packages in role/packages/defaults/main.yml**
+```yaml
+common_packages:
+  - vim
+  - tree
+  - wget
+  - net-tools
+  - nginx
+```
 ---
 
 #  **4. Services Role (roles/services/tasks/main.yml)**
@@ -194,18 +204,23 @@ rm -rf /var/cache/yum/*
 ```
 ---
 
-#  **7. Time Sync Role (roles/timesync/tasks/main.yml)**
+#  **7. Time Sync Role roles/timesync/tasks/main.yml**
 
 ```yaml
 - name: Configure NTP
   include_role:
     name: rhel-system-roles.timesync
-
   vars:
-    timesync_ntp_servers:
-      - hostname: 0.asia.pool.ntp.org
-      - hostname: 1.asia.pool.ntp.org
-      - hostname: 2.asia.pool.ntp.org
+    timesync_ntp_servers: "{{ timesync_ntp_servers }}"
+
+```
+- **Define TimeSync Vars in `roles/timesync/defaults/main.yml`**
+```yaml
+# Global NTP servers
+timesync_ntp_servers:
+  - hostname: 0.asia.pool.ntp.org
+  - hostname: 1.asia.pool.ntp.org
+  - hostname: 2.asia.pool.ntp.org
 ```
 #  **8.Backup_Automation roles/backup/tasks/main.yml**
 ```yaml
