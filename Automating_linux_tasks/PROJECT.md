@@ -112,8 +112,50 @@ This playbook calls all roles in order.
 
 Place `index.html` inside:
 
-```
-roles/files/files/index.html
+    roles/files/files/index.html
+```yaml
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Ansible Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            text-align: center;
+            padding-top: 80px;
+        }
+        h1 {
+            color: #222;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        a {
+            color: #0077b5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p>This is a simple Ansible project designed to automate Linux administration tasks.</p>
+    <p>Connect with me on LinkedIn:</p>
+    <p><a href="https://www.linkedin.com/in/muhammad-shaban-45577719a" target="_blank">
+        www.linkedin.com/in/muhammad-shaban-45577719a
+    </a></p>
+    <p>Explore my Ansible Study Guide for Beginners:</p>
+    <p><a href="https://github.com/muhammadshaban89/Ansible-Learn" target="_blank">
+        github.com/muhammadshaban89/Ansible-Learn
+    </a></p>
+</body>
+</html>
 ```
 
 ---
