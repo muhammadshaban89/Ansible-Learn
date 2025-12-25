@@ -235,12 +235,12 @@ timesync_ntp_servers:
     state: directory
     mode: '0755'
 
-- name: Schedule daily backup at 1 AM
+- name: Schedule backup every 2 minutes
   cron:
-    name: "Daily system backup"
+    name: "Backup every 2 minutes"
     job: "/usr/local/bin/backup.sh"
-    minute: "0"
-    hour: "1"
+    minute: "*/2"
+    hour: "*"
 ```
 - backup.sh
 ```yaml
