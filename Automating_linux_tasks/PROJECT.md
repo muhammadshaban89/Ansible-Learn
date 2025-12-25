@@ -210,8 +210,7 @@ rm -rf /var/cache/yum/*
 - name: Configure NTP
   include_role:
     name: rhel-system-roles.timesync
-  vars:
-    timesync_ntp_servers: "{{ timesync_ntp_servers }}"
+  loop: "{{ timesync_ntp_servers }}"
 
 ```
 - **Define TimeSync Vars in `roles/timesync/defaults/main.yml`**
@@ -246,11 +245,18 @@ timesync_ntp_servers:
 - backup.sh
 ```yaml
 #!/bin/bash
-BACKUP_DIR="/var/backups/system"
-mkdir -p $BACKUP_DIR
 
-tar -czf $BACKUP_DIR/etc-backup-$(date +%F).tar.gz /etc
-find $BACKUP_DIR -type f -mtime +7 -delete
+# Directory where backups will be stored
+BACKUP_DIR="/var/backups/system"
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Create a compressed backup of /etc with a timestamp
+tar -czf "$BACKUP_DIR/etc-backup-$(date +%F-%H%M).tar.gz" /etc
+
+# Delete backups older than 7 days
+find "$BACKUP_DIR" -type f -mtime +7 -name "etc-backup-*.tar.gz" -delete
 ```
 - **what does it will do?**
 
