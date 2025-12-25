@@ -23,6 +23,7 @@ simple_project/
 │   │   └── files/index.html
 │   ├── cron/
 │   │   └── tasks/main.yml
+|   |   └── files/clean.sh
 │   ├── timesync/
 │   │   └── tasks/main.yml
 │   ├── backup/
@@ -170,7 +171,21 @@ Place `index.html` inside:
     minute: "0"
     hour: "2"
 ```
+- **clean.sh**:
 
+      roles/cron/files/clean.sh
+```bash
+#!/bin/bash
+
+# Cleanup temporary files older than 7 days
+find /tmp -type f -mtime +7 -delete
+
+# Cleanup old logs in /var/log/myapp
+find /var/log/myapp -type f -name "*.log" -mtime +7 -delete
+
+# Cleanup system cache (optional)
+rm -rf /var/cache/yum/*
+```
 ---
 
 #  **7. Time Sync Role (roles/timesync/tasks/main.yml)**
