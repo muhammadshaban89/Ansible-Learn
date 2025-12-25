@@ -164,6 +164,12 @@ Place `index.html` inside:
 #  **6. Cron Role (roles/cron/tasks/main.yml)**
 
 ```yaml
+- name: Copy cleanup script to target node
+  copy:
+    src: clean.sh
+    dest: /usr/local/bin/cleanup.sh
+    mode: '0755'
+
 - name: Setup daily cleanup cron job
   cron:
     name: "cleanup logs"
