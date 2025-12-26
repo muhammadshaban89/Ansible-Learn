@@ -172,45 +172,74 @@ The mount Module:
 EXAMPLE PlayBook:
 ----------------
 ```yaml
-- name: Partition, format, and mount a disk
+- name : partition , formate and mount disk
+  hosts: rhelnode
+  tasks:
+    - name: create primary partition on /dev/sda
+      parted:
+        device: /dev/sda
+        number: 1
+        state: present
+        part_type: primary
+        fs_type: ext4
+        part_end: 5GiB
+
+
+          # tasks-2 to create a file system
+    - name: Create file system
+      filesystem:
+        fstype: ext4
+        dev: /dev/sda1
+
+    - name: Create mount point
+      file:
+        path: /new_mount
+        state: directory
+        mode: 0755
+
+    - name: Mount filesystem
+      mount:
+        path: /new_mount
+        src: /dev/sda1
+        fstype: ext4
+        state: mounted
+    - name: Make entries in /etc/fstab
+      mount:
+        path: /new_mount
+        src: /dev/sda1
+        fstype: ext4
+        opts: defaults
+        state: present
+
+```
+- To delete this partition.
+```yaml
+- name: Unmount and delete partition /dev/sda1
   hosts: rhelnode
   become: yes
 
   tasks:
 
-    - name: Create a primary partition on /dev/sdb
-      community.general.parted:
-        device: /dev/sdb
-        number: 1
-        state: present
-        part_type: primary
-        fs_type: ext4
-        start: 1MiB
-        end: 2GiB
+    - name: Unmount /new_mount
+      mount:
+        path: /new_mount
+        state: unmounted
 
-    - name: Create ext4 filesystem on /dev/sdb1
-      filesystem:
+    - name: Remove /etc/fstab entry
+      mount:
+        path: /new_mount
+        src: /dev/sda1
         fstype: ext4
-        dev: /dev/sdb1
+        state: absent
 
-    - name: Create mount point directory
+    - name: Remove mount directory
       file:
-        path: /data
-        state: directory
-        mode: '0755'
+        path: /new_mount
+        state: absent
 
-    - name: Mount /dev/sdb1 to /data
-      mount:
-        path: /data
-        src: /dev/sdb1
-        fstype: ext4
-        state: mounted
-
-    - name: Persist mount in /etc/fstab
-      mount:
-        path: /data
-        src: /dev/sdb1
-        fstype: ext4
-        opts: defaults
-        state: present
+    - name: Delete partition /dev/sda1
+      community.general.parted:
+        device: /dev/sda
+        number: 1
+        state: absent
 ```
