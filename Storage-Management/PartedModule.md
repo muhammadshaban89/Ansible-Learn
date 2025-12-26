@@ -121,4 +121,57 @@ From the search results, LVM partitioning is also supported:
 
 ---
 
+The filesystem Module
+----------------------
+
+- The `filesystem` module supports both creating and resizing a filesystem.
+-  This module supports filesystem resizing for ext2, ext3, ext4, ext4dev, f2fs, lvm, xfs, and vfat.
+
+  # **Ansible `filesystem` Module — Key Parameters**
+
+| **Parameter** | **Description** |
+|---------------|------------------|
+| **dev** | The **block device** on which the filesystem will be created or resized. Example: `/dev/sdb1`. |
+| **fstype** | The **filesystem type** to create. Common values: `ext4`, `xfs`, `ext3`, `btrfs`. |
+| **resizefs** | If `yes`, Ansible will **grow the filesystem** to match the size of the underlying block device. Useful after extending an LV or partition. |
+
+---
+
+#  **Example: Create an ext4 Filesystem**
+
+```yaml
+- name: Create ext4 filesystem on /dev/sdb1
+  filesystem:
+    fstype: ext4
+    dev: /dev/sdb1
+```
+
+The mount Module:
+----------------
+- The `mount` module supports the configuration of mount points on /etc/fstab.
+*Mount Module — Key Parameters**
+
+| **Parameter** | **Description** |
+|--------------|------------------|
+| **path** | The mount point directory (e.g., `/data`). |
+| **src** | The device to mount (e.g., `/dev/vg1/lv1`). |
+| **fstype** | Filesystem type (must match what you created). |
+| **opts** | Mount options (e.g., `defaults`, `noatime`). |
+| **state** | `mounted` mounts + writes to `/etc/fstab`; `absent` unmounts + removes from `/etc/fstab`. |
+
+### Mount the LV and Persist in /etc/fstab
+
+```yaml
+- name: Mount LV on /data
+  mount:
+    path: /data
+    src: /dev/vg1/lv1
+    fstype: xfs
+    opts: defaults
+    state: mounted
+```
+
+✔ Mounts the LV  
+✔ Writes entry to `/etc/fstab`  
+✔ Ensures it mounts on reboot  
 
