@@ -113,13 +113,10 @@ From the search results, LVM partitioning is also supported:
     state: info
 ```
 
----
-
-#  Why Use `parted` Instead of Shell Commands?
+** Why Use `parted` Instead of Shell Commands?**
 
 - using `shell` commands like `fdisk` is unreliable and error‑prone, while `parted` is the correct automated approach.
 
----
 
 The filesystem Module
 ----------------------
