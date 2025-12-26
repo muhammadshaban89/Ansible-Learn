@@ -72,7 +72,6 @@ According to the documentation:
 - Type: **primary**  
 - Filesystem: **ext4**
 
----
 
 # Example — Create an LVM Partition  
 From the search results, LVM partitioning is also supported:
@@ -90,8 +89,6 @@ From the search results, LVM partitioning is also supported:
     end: 100%
 ```
 
----
-
 # Example — Remove a Partition
 
 ```yaml
@@ -104,7 +101,7 @@ From the search results, LVM partitioning is also supported:
 
 ---
 
-#  Example — Print Partition Table
+# Example — Print Partition Table
 
 ```yaml
 - name: Print partition table
@@ -124,7 +121,7 @@ The filesystem Module
 - The `filesystem` module supports both creating and resizing a filesystem.
 -  This module supports filesystem resizing for ext2, ext3, ext4, ext4dev, f2fs, lvm, xfs, and vfat.
 
-  # **Ansible `filesystem` Module — Key Parameters**
+  **Ansible `filesystem` Module — Key Parameters**
 
 | **Parameter** | **Description** |
 |---------------|------------------|
