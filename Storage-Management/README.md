@@ -169,3 +169,48 @@ The mount Module:
 ✔ Writes entry to `/etc/fstab`  
 ✔ Ensures it mounts on reboot  
 
+EXAMPLE PlayBook:
+----------------
+```yaml
+- name: Partition, format, and mount a disk
+  hosts: rhelnode
+  become: yes
+
+  tasks:
+
+    - name: Create a primary partition on /dev/sdb
+      community.general.parted:
+        device: /dev/sdb
+        number: 1
+        state: present
+        part_type: primary
+        fs_type: ext4
+        start: 1MiB
+        end: 2GiB
+
+    - name: Create ext4 filesystem on /dev/sdb1
+      filesystem:
+        fstype: ext4
+        dev: /dev/sdb1
+
+    - name: Create mount point directory
+      file:
+        path: /data
+        state: directory
+        mode: '0755'
+
+    - name: Mount /dev/sdb1 to /data
+      mount:
+        path: /data
+        src: /dev/sdb1
+        fstype: ext4
+        state: mounted
+
+    - name: Persist mount in /etc/fstab
+      mount:
+        path: /data
+        src: /dev/sdb1
+        fstype: ext4
+        opts: defaults
+        state: present
+```
