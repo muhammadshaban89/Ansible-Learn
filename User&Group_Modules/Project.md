@@ -1,9 +1,10 @@
+Simple_Project:
+---------------
 
-
-##Creates `pubkeys/` **on the control node**  
-##Generates SSH key pairs **on the control node** for each user  
-##Stores each user’s public key in `pubkeys/<username>.pub`  
-## Then continues with:  
+- Creates `pubkeys/` **on the control node**
+- Generates SSH key pairs **on the control node** for each user
+- Stores each user’s public key in `pubkeys/<username>.pub`
+- **Then continues with:**  
 - creating users  
 - adding them to `devteam`  
 - setting passwords from vault  
