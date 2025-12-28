@@ -49,6 +49,7 @@ Ansible  Guide for biggners
 
 **24: Automating_linux_tasks**
 
+**25: Storage_Management**
 
 
 
