@@ -100,7 +100,7 @@ This will **not overwrite** an existing key.
 
 ---
 
- **THE GROUP MODULE **
+ **THE GROUP MODULE**
 
 The **`group` module** manages groups on remote hosts.
 
