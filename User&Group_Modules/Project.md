@@ -28,7 +28,7 @@ This ensures key generation happens **only once** and **only on the controller**
 ```yaml
 ---
 - name: Manage users, groups, and SSH keys
-  hosts: all
+  hosts: rhelnode
   become: yes
 
   vars_files:
@@ -108,7 +108,17 @@ This ensures key generation happens **only once** and **only on the controller**
         key: "{{ lookup('file', 'pubkeys/' + item + '.pub') }}"
       loop: "{{ user_list }}"
 ```
-
+- vault.yml
+```yaml
+user_passwords:
+  dev: "$6$HASHEDPASSWORD1"
+  tester: "$6$HASHEDPASSWORD2"
+  admin: "$6$HASHEDPASSWORD3"
+```
+- create vault.
+```yaml
+ansible-vault edit vault.yml
+```
 ---
 
 **How This Works (Step-by-Step)**
@@ -143,4 +153,3 @@ Correct permissions for SSH.
 Each user gets their own public key.
 
 
-Just tell me what direction you want to take next.
