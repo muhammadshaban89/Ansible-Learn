@@ -20,36 +20,36 @@ This module is essential for Linux administration automation.
 
 **Key Concepts**
 
-## `name` (required)
+**`name` (required)**
 The username to create or manage.
 
 ```yaml
 name: devops_user
 ```
 
-##  `shell`
+**`shell`**
 Sets the user’s login shell.
 
 ```yaml
 shell: /bin/bash
 ```
 
-##  `groups`
+**`groups`**
 List of secondary groups.
 
 ```yaml
 groups: sys_admins, developers
 ```
 
-##  `append: yes`
+**`append: yes`**
 Prevents overwriting existing groups.
 
 Without `append: yes`, Ansible **replaces** all secondary groups.
 
-##  `password`
+**`password`**
 Must be a **hashed** password (not plain text).
 
-##  `generate_ssh_key`
+**`generate_ssh_key`**
 Automatically creates an SSH key pair for the user.
 
 ```yaml
@@ -168,7 +168,7 @@ So this module is essential when you want to:
 ```
 
 
-## `user: user1`
+**`user: user1`**
 This tells Ansible:
 
 > “Modify the `authorized_keys` file for the user **`user1`** on the remote server.”
@@ -179,7 +179,7 @@ The file being modified is:
 /home/user1/.ssh/authorized_keys
 ```
 
-## `state: present`
+**`state: present`**
 This means:
 
 - Ensure the key **exists** in the `authorized_keys` file  
@@ -192,14 +192,14 @@ If you wanted to remove a key, you would use:
 state: absent
 ```
 
-## `key: "{{ lookup('file', '/home/user1/.ssh/id_rsa.pub') }}"`
+**`key: "{{ lookup('file', '/home/user1/.ssh/id_rsa.pub') }}"`**
 This is the most important part.
 
 ### What it does:
 - Reads the **public key file** from the **Ansible control node**, not the remote server  
 - Inserts that key into the remote user’s authorized_keys file
 
-## Why lookup is used:
+**Why lookup is used:**
 `lookup('file', ...)` means:
 
 > “Read the contents of this file on the controller machine.”
