@@ -1,7 +1,7 @@
 User and Group Management:
 -------------------------
 
-#  **THE USER MODULE**
+**THE USER MODULE**
 
 The **Ansible `user` module** manages user accounts on **remote managed hosts**.  
 It can:
@@ -18,38 +18,38 @@ It can:
 This module is essential for Linux administration automation.
 
 
-#  **Key Concepts**
+**Key Concepts**
 
-### ✔ `name` (required)
+## `name` (required)
 The username to create or manage.
 
 ```yaml
 name: devops_user
 ```
 
-### ✔ `shell`
+##  `shell`
 Sets the user’s login shell.
 
 ```yaml
 shell: /bin/bash
 ```
 
-### ✔ `groups`
+##  `groups`
 List of secondary groups.
 
 ```yaml
 groups: sys_admins, developers
 ```
 
-### ✔ `append: yes`
+##  `append: yes`
 Prevents overwriting existing groups.
 
 Without `append: yes`, Ansible **replaces** all secondary groups.
 
-### ✔ `password`
+##  `password`
 Must be a **hashed** password (not plain text).
 
-### ✔ `generate_ssh_key`
+##  `generate_ssh_key`
 Automatically creates an SSH key pair for the user.
 
 ```yaml
@@ -62,7 +62,7 @@ This will **not overwrite** an existing key.
 
 ---
 
-# **Example: Creating a User with Groups**
+ **Example: Creating a User with Groups**
 
 ```yaml
 - name: Add new user to the development machine
@@ -73,7 +73,7 @@ This will **not overwrite** an existing key.
     append: yes
 ```
 
-#  **Example: Create User + Generate SSH Key**
+ **Example: Create User + Generate SSH Key**
 
 ```yaml
 - name: Create a SSH key for user1
@@ -85,7 +85,7 @@ This will **not overwrite** an existing key.
 ```
 
 
-# **Common Parameters**
+ **Common Parameters**
 
 | Parameter | Meaning |
 |----------|---------|
@@ -100,7 +100,7 @@ This will **not overwrite** an existing key.
 
 ---
 
-# **THE GROUP MODULE **
+ **THE GROUP MODULE **
 
 The **`group` module** manages groups on remote hosts.
 
@@ -112,7 +112,7 @@ It can:
 
 ---
 
-# **Example: Ensure a Group Exists**
+ **Example: Ensure a Group Exists**
 
 ```yaml
 - name: Verify that auditors group exists
@@ -121,7 +121,7 @@ It can:
     state: present
 ```
 
-# **Common Group Module Parameters**
+ **Common Group Module Parameters**
 
 | Parameter | Meaning |
 |----------|---------|
@@ -130,9 +130,8 @@ It can:
 | `system` | Create a system group |
 | `state` | present/absent |
 
----
 
-#  **How These Modules Work Together**
+ **How These Modules Work Together**
 
 In real automation, you often:
 
