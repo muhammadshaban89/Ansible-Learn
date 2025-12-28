@@ -28,7 +28,7 @@ This ensures key generation happens **only once** and **only on the controller**
 ```yaml
 ---
 - name: Manage users, groups, and SSH keys
-  hosts: rhelnode
+  hosts: webservers
   become: yes
 
   vars_files:
