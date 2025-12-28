@@ -143,7 +143,8 @@ In real automation, you often:
 6. **Set permissions**
 
 
-**What the `authorized_key` Module Does**
+ `authorized_key` Module
+---------------------------
 
 - The `authorized_key` module manages the **SSH authorized_keys file** for a user on a **managed node**.
 - This is the file that controls **which public keys are allowed to SSH into that user account**.
