@@ -3,8 +3,24 @@
 - The `at` and `Cron` modules are provided by Ansible are used to schedule future jobs on managed host.
 
 # Ansible `at` Module  
-The **`at`** module schedules **one‑time tasks** on the target host.  
-Perfect for delayed actions, maintenance windows, or post‑deployment cleanup.
+- The **`at`** module schedules **one‑time tasks** on the target host.  
+- Perfect for delayed actions, maintenance windows, or post‑deployment cleanup.
+
+**Common Parameters**
+
+| Parameter | Description |
+|----------|-------------|
+| **command** | The command/script to run at the scheduled time. |
+| **count** | Number of units (e.g., 5 minutes, 2 hours). |
+| **units** | Time units: `minutes`, `hours`, `days`, `weeks`. |
+| **time** | Exact time string (e.g., `"02:30"` or `"now + 1 hour"`). |
+| **state** | `present` (default) or `absent` to delete a job. |
+| **job_id** | ID of an existing at job to remove. |
+| **unique** | `yes/no`. Prevents duplicate jobs with same command. |
+| **wait** | Wait for job completion and return output. |
+| **user** | Run the job as a specific user. |
+
+
 
 
 **Basic Example — Run a command once after 5 minutes**
@@ -47,6 +63,26 @@ Perfect for delayed actions, maintenance windows, or post‑deployment cleanup.
 
 - The **`cron`** module manages **recurring scheduled tasks**.  
 - Great for backups, log rotation, monitoring scripts, cleanup routines, etc.
+
+**Common Parameters**
+
+| Parameter | Description |
+|----------|-------------|
+| **name** | Identifier for the cron job (required). |
+| **job** | The command/script to run. |
+| **minute** | Minute field (`0–59`, `*/5`, etc.). |
+| **hour** | Hour field (`0–23`). |
+| **day** | Day of month (`1–31`). |
+| **month** | Month (`1–12` or names). |
+| **weekday** | Day of week (`0–6` or names). |
+| **state** | `present` (default) or `absent`. |
+| **user** | User whose crontab to modify. |
+| **disabled** | `yes/no`. Comment out the job without deleting it. |
+| **cron_file** | Write to a file under `/etc/cron.d/` instead of user crontab. |
+| **env** | Set environment variable instead of a job. |
+| **backup** | Backup the crontab before modifying. |
+
+
 
 **Example — Create a daily cron job**
 ```yaml
