@@ -51,6 +51,10 @@ Ansible  Guide for biggners
 
 **25: Storage_Management**
 
+**26: User Management**
+
+**27: Schedule_future_jobs**
+
 
 
 
