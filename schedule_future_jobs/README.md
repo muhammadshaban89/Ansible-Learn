@@ -21,8 +21,7 @@ Perfect for delayed actions, maintenance windows, or post‑deployment cleanup.
         unique: yes
 ```
 
-
-# Schedule at a specific time
+**Schedule at a specific time**
 ```yaml
 - name: Run a script at 2:30 AM
   hosts: all
@@ -33,8 +32,7 @@ Perfect for delayed actions, maintenance windows, or post‑deployment cleanup.
         command: "/usr/local/bin/backup.sh"
         time: "02:30"
 ```
-
-# Remove a scheduled at job
+**Remove a scheduled at job**
 ```yaml
 - name: Remove an at job
   hosts: all
@@ -45,7 +43,8 @@ Perfect for delayed actions, maintenance windows, or post‑deployment cleanup.
         job_id: 12
         state: absent
 ```
-#  Ansible `cron` Module  
+**Ansible `cron` Module**
+
 - The **`cron`** module manages **recurring scheduled tasks**.  
 - Great for backups, log rotation, monitoring scripts, cleanup routines, etc.
 
@@ -62,8 +61,7 @@ Perfect for delayed actions, maintenance windows, or post‑deployment cleanup.
         hour: "3"
         job: "/usr/local/bin/backup.sh"
 ```
-
-# Example — Run every 15 minutes
+**Example — Run every 15 minutes**
 ```yaml
 - name: Run script every 15 minutes
   hosts: all
@@ -75,8 +73,7 @@ Perfect for delayed actions, maintenance windows, or post‑deployment cleanup.
         minute: "*/15"
         job: "/usr/local/bin/disk_check.sh"
 ```
-
-# Remove a cron job
+**Remove a cron job**
 ```yaml
 - name: Remove a cron job
   hosts: all
@@ -87,9 +84,7 @@ Perfect for delayed actions, maintenance windows, or post‑deployment cleanup.
         name: "Disk monitor"
         state: absent
 ```
-
-
-# Add cron job to a specific user
+**Add cron job to a specific user**
 ```yaml
 - name: Add cron job for user 'muhammad'
   hosts: all
@@ -233,3 +228,6 @@ echo "Disk Check completed at $(date)" >> "$LOGFILE"
 echo "" >> "$LOGFILE"
 ```
 
+Thanks:
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
