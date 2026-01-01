@@ -177,7 +177,10 @@
         state: restarted
 ```
 
-- **Log and tmp cleanup script `clean.sh`** that:
+Scripts:
+-------
+
+-1: **Log and tmp cleanup script `clean.sh`** that:
 
 -  rotates logs
 - clears temp files older than X days
@@ -205,7 +208,7 @@ echo "Cleanup completed at $(date)" >> "$LOGFILE"
 echo "" >> "$LOGFILE"
 ```
 
-- **Simple Backup Scrip** `backup.sh`  --> That:
+- 2:**Simple Backup Scrip** `backup.sh`  --> That:
  -  backs up a directory
  - compresses it
  - stores it with a timestamp
@@ -238,7 +241,7 @@ echo "Backup completed at $(date)" >> "$LOGFILE"
 echo "" >> "$LOGFILE"
 ```
 
-- **EXAMPLE: Disk_check_script. `disk_check.sh`**
+- **3: Disk_check_script. `disk_check.sh`**
 
 ```yaml
 #!/bin/bash
