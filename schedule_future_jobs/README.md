@@ -206,11 +206,11 @@ echo "" >> "$LOGFILE"
 ```
 
 - **Simple Backup Scrip** `backup.sh`  --> That:
--  backs up a directory
-- compresses it
-- stores it with a timestamp
-- logs everything
-- avoids overwriting existing backups
+ -  backs up a directory
+ - compresses it
+ - stores it with a timestamp
+ - logs everything
+ - avoids overwriting existing backups
 ```yaml
 #!/bin/bash
 
