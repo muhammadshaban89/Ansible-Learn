@@ -180,7 +180,7 @@
 Scripts:
 -------
 
--1: **Log and tmp cleanup script `clean.sh`** that:
+- 1: **Log and tmp cleanup script `clean.sh`** that:
 
 -  rotates logs
 - clears temp files older than X days
