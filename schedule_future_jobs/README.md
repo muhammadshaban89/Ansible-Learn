@@ -23,7 +23,10 @@
 
 
 
-**Basic Example — Run a command once after 5 minutes**
+Examples:
+---------
+
+**1:Run a command once after 5 minutes**
 ```yaml
 - name: Schedule a one-time task using at
   hosts: all
@@ -37,7 +40,7 @@
         unique: yes
 ```
 
-**Schedule at a specific time**
+**2:Schedule at a specific time**
 ```yaml
 - name: Run a script at 2:30 AM
   hosts: all
@@ -48,7 +51,8 @@
         command: "/usr/local/bin/backup.sh"
         time: "02:30"
 ```
-**Remove a scheduled at job**
+
+**3:Remove a scheduled at job**
 ```yaml
 - name: Remove an at job
   hosts: all
@@ -109,6 +113,24 @@
         minute: "*/15"
         job: "/usr/local/bin/disk_check.sh"
 ```
+**Schedule at a specific time using `cron_file` parameter**
+```yaml
+---
+- name: Manage cron jobs using cron_file
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Run cleanup script every day at 2:30 AM
+      ansible.builtin.cron:
+        name: "daily_cleanup"
+        minute: "30"
+        hour: "2"
+        job: "/usr/local/bin/cleanup.sh"
+        cron_file: "myapp_cleanup"
+        user: root
+```
+
 **Remove a cron job**
 ```yaml
 - name: Remove a cron job
