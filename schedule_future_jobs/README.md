@@ -28,16 +28,25 @@ Examples:
 
 **1:Run a command once after 5 minutes**
 ```yaml
-- name: Schedule a one-time task using at
-  hosts: all
-  become: yes
+- name: Run a job after 5 minutes to check disk status
+  hosts: rhelnode
+  become: true
+
   tasks:
-    - name: Run cleanup script after 5 minutes
-      ansible.builtin.at:
-        command: "/usr/local/bin/cleanup.sh"
-        count: 5
+
+    - name: Copy disk_check.sh to managed host
+      copy:
+        src: files/disk_check.sh
+        dest: /usr/local/bin/disck_check.sh
+        mode: '0755'
+
+    - name: Schedule disk check after 5 minutes
+      at:
+        command: "bash -lc '/usr/local/bin/disck_check.sh'"
+        count: 1
         units: minutes
         unique: yes
+
 ```
 
 **2:Schedule at a specific time**
