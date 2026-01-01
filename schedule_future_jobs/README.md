@@ -266,17 +266,18 @@ echo "" >> "$LOGFILE"
 - **3: Disk_check_script. `disk_check.sh`**
 
 ```yaml
-#!/bin/bash
+echo "===== Disk Check started at $(/usr/bin/date) =====" >> "$LOGFILE"
 
-LOGFILE="/var/log/disk_check.log"
-THRESHOLD=80   # alert if usage exceeds 80%
+# Use full paths for all commands
+/usr/bin/df -hP | /usr/bin/grep -vE 'tmpfs|devtmpfs|squashfs|iso9660' | /usr/bin/tail -n +2 | while read -r line; do
+    # Extract last two fields (bulletproof)
+    MOUNT=$(echo "$line" | /usr/bin/awk '{print $NF}')
+    USAGE=$(echo "$line" | /usr/bin/awk '{print $(NF-1)}' | /usr/bin/tr -d '%')
 
-echo "===== Disk Check started at $(date) =====" >> "$LOGFILE"
-
-# Loop through all mounted filesystems except tmpfs, devtmpfs, squashfs
-df -hP | grep -vE 'tmpfs|devtmpfs|squashfs' | tail -n +2 | while read -r line; do
-    USAGE=$(echo "$line" | awk '{print $5}' | tr -d '%')
-    MOUNT=$(echo "$line" | awk '{print $6}')
+    # Skip if usage or mount is empty
+    if [[ -z "$USAGE" || -z "$MOUNT" ]]; then
+        continue
+    fi
 
     if [ "$USAGE" -ge "$THRESHOLD" ]; then
         echo "WARNING: $MOUNT is at ${USAGE}% usage" >> "$LOGFILE"
@@ -285,8 +286,9 @@ df -hP | grep -vE 'tmpfs|devtmpfs|squashfs' | tail -n +2 | while read -r line; d
     fi
 done
 
-echo "Disk Check completed at $(date)" >> "$LOGFILE"
+echo "Disk Check completed at $(/usr/bin/date)" >> "$LOGFILE"
 echo "" >> "$LOGFILE"
+
 ```
 
 Thanks:
